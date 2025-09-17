@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import BankTransferModal from './BankTransferModal';
+import GPayModal from './GPayModal';
 
 const PaymentMethods = ({ selectedMethod, onMethodSelect }) => {
     const [showBankModal, setShowBankModal] = useState(false);
+    const [showGPayModal, setShowGPayModal] = useState(false);
     
     const paymentMethods = [
         {
@@ -49,6 +51,8 @@ const PaymentMethods = ({ selectedMethod, onMethodSelect }) => {
                                     onClick={() => {
                                         if (method.id === 'bank-transfer') {
                                             setShowBankModal(true);
+                                        } else if (method.id === 'gpay-upi') {
+                                            setShowGPayModal(true);
                                         } else {
                                             onMethodSelect(method.id);
                                         }
@@ -67,6 +71,10 @@ const PaymentMethods = ({ selectedMethod, onMethodSelect }) => {
             <BankTransferModal 
                 isOpen={showBankModal}
                 onClose={() => setShowBankModal(false)}
+            />
+            <GPayModal 
+                isOpen={showGPayModal}
+                onClose={() => setShowGPayModal(false)}
             />
         </section>
     );

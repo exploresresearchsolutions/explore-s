@@ -13,19 +13,23 @@ const BankTransferModal = ({ isOpen, onClose }) => {
                     <div className="bank-details">
                         <div className="detail-row">
                             <span className="detail-label">Bank Name:</span>
-                            <span className="detail-value">HDFC</span>
+                            <span className="detail-value">IDFC FIRST Bank</span>
                         </div>
                         <div className="detail-row">
                             <span className="detail-label">Account Number:</span>
-                            <span className="detail-value">50200103039585</span>
+                            <span className="detail-value">10245868940</span>
                         </div>
                         <div className="detail-row">
                             <span className="detail-label">IFSC Code:</span>
-                            <span className="detail-value">HDFC0001721</span>
+                            <span className="detail-value">IDFB0022462</span>
                         </div>
                         <div className="detail-row">
                             <span className="detail-label">Account Holder:</span>
-                            <span className="detail-value">Scholar Scribe Solutions</span>
+                            <span className="detail-value">Explore S solutions</span>
+                        </div>
+                        <div className="detail-row">
+                            <span className="detail-label">Company Customer ID:</span>
+                            <span className="detail-value">6685722401</span>
                         </div>
                     </div>
                 </div>
