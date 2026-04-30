@@ -55,7 +55,7 @@ const Campus = () => {
                     </div>
                     <div className="col-lg-5">                                
                         <div className="about__image">
-                            <img src={campusImg4} alt="image" />
+                            <img src="/1.jpeg" alt="image" style={{ height: '550px', width: '100%', objectFit: 'cover', borderRadius: '0px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} />
                             <img className="shape-1" src={campusShape} alt="image" />
                         </div>                                
                     </div>

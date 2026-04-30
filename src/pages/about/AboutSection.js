@@ -1,23 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import aboutImg from '../../assets/images/about/ab.png'
-import shapeImg from '../../assets/images/about/badge.png'
+// Images removed as video is used instead.
 
 const AboutPart = () => {
 
     return (
         <div className="about__area about__area_one p-relative pt---100 pb---120">
             <div className="container"> 
-                <div className="row">
-                    <div className="col-lg-6">
-                        <div className="about__image wow animate__fadeInUp" data-wow-duration="0.3s">
-                            <img src={aboutImg} alt="About" />
-                            <img className="react__shape__ab" src={shapeImg} alt="Shape Image" />
-                        </div>
-                    </div>
-                    <div className="col-lg-6">
-                        <div className="about__content">
+        <div className="row align-items-start">
+          <div className="col-lg-6">
+            <div className="about__image wow animate__fadeInUp" data-wow-duration="0.3s">
+              <video 
+                src="/3.mp4" 
+                autoPlay 
+                loop 
+                muted 
+                style={{ width: '100%', height: '750px', objectFit: 'cover', borderRadius: '1px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}
+              />
+            </div>
+          </div>
+          <div className="col-lg-6">
+            <div className="about__content" style={{ paddingTop: '0px' }}>
                             <h2 className="about__title wow animate__fadeInUp" data-wow-duration="0.3s">Welcome to <br/> <em>Explore S Research Solutions</em></h2>
                             <p className="about__paragraph wow animate__fadeInUp" data-wow-duration="0.5s">Discover the difference with personalized, expert research assistance at Explore S Research Solutions.</p>
                             <p className="about__paragraph2 wow animate__fadeInUp" data-wow-duration="0.7s"> Have questions?  <Link to="/contact"> Get Free Consultation </Link></p>

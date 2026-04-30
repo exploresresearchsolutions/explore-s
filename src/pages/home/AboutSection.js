@@ -1,22 +1,19 @@
 import { Link } from "react-router-dom";
 
 // Image
-import aboutImg from "../../assets/images/about/ab.png";
-import aboutBadge from "../../assets/images/about/badge.png";
 
 const About = () => {
   return (
-    <div className="about__area about__area_one p-relative pt---10 pb---120">
+    <div className="about__area about__area_one p-relative pt---100 pb---120">
       <div className="container">
-        <div className="row">
+        <div className="row align-items-start">
           <div className="col-lg-6">
             <div className="about__image">
-              <img src={aboutImg} alt="About" />
-              {/* <img className="react__shape__ab" src={aboutBadge} alt="Shape Image" /> */}
+              <img src="/2.png" alt="About" style={{ borderRadius: '0px', height: '550px', width: '100%', marginBottom: '20px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} />
             </div>
           </div>
           <div className="col-lg-6">
-            <div className="about__content">
+            <div className="about__content" style={{ paddingTop: '0px' }}>
               <h2
                 className="about__title wow animate__fadeInUp"
                 data-wow-duration="0.3s"
