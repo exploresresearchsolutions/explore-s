@@ -36,7 +36,11 @@ const Seo = ({
       <meta name="twitter:image" content={image} />
 
       {jsonLd && (
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+        Array.isArray(jsonLd)
+          ? jsonLd.map((schema, i) => (
+              <script key={i} type="application/ld+json">{JSON.stringify(schema)}</script>
+            ))
+          : <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       )}
     </Helmet>
   );

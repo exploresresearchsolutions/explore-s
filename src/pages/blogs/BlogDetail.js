@@ -8,18 +8,35 @@ import ScrollToTop from '../../components/ScrollTop';
 import Seo from '../../components/Seo';
 import { BLOG_BY_SLUG, ALL_BLOGS } from '../../data/blogs/index';
 
-// Custom renderers so markdown images get responsive classes
+const SITE_URL = 'https://www.exploresresearchsolutions.in';
+
+// Produce a URL-safe anchor ID from heading text
+function slugify(text) {
+  return String(text)
+    .toLowerCase()
+    .replace(/[`*[\]()#]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
+
+// Extract H2/H3 headings from raw markdown for sidebar TOC
+function extractToc(mdContent) {
+  return mdContent
+    .split('\n')
+    .filter((l) => /^#{2,3} /.test(l))
+    .map((l) => ({
+      level: l.startsWith('### ') ? 3 : 2,
+      text: l.replace(/^#{2,4} /, ''),
+      id: slugify(l.replace(/^#{2,4} /, '')),
+    }));
+}
+
+// Custom renderers: heading IDs + responsive tables + external links
 const mdComponents = {
   img({ src, alt, ...rest }) {
     return (
       <figure className="bd-figure">
-        <img
-          src={src}
-          alt={alt || ''}
-          loading="lazy"
-          className="bd-figure__img"
-          {...rest}
-        />
+        <img src={src} alt={alt || ''} loading="lazy" className="bd-figure__img" {...rest} />
         {alt && <figcaption className="bd-figure__caption">{alt}</figcaption>}
       </figure>
     );
@@ -27,14 +44,29 @@ const mdComponents = {
   a({ href, children, ...rest }) {
     const isExternal = href && (href.startsWith('http') || href.startsWith('//'));
     return (
-      <a
-        href={href}
-        {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-        {...rest}
-      >
+      <a href={href} {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})} {...rest}>
         {children}
       </a>
     );
+  },
+  table({ children }) {
+    return (
+      <div className="bd-table-wrap">
+        <table>{children}</table>
+      </div>
+    );
+  },
+  h1({ children }) {
+    const text = React.Children.toArray(children).join('');
+    return <h1 id={slugify(text)}>{children}</h1>;
+  },
+  h2({ children }) {
+    const text = React.Children.toArray(children).join('');
+    return <h2 id={slugify(text)}>{children}</h2>;
+  },
+  h3({ children }) {
+    const text = React.Children.toArray(children).join('');
+    return <h3 id={slugify(text)}>{children}</h3>;
   },
 };
 
@@ -53,6 +85,44 @@ const BlogDetail = () => {
   const prevBlog = ALL_BLOGS[currentIdx + 1] || null;
   const nextBlog = ALL_BLOGS[currentIdx - 1] || null;
 
+  // Generate Table of Contents from headings
+  const toc = extractToc(content);
+
+  // Article Schema (JSON-LD)
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: meta.title,
+    description: meta.excerpt,
+    author: {
+      '@type': 'Organization',
+      name: meta.author || 'Explore Research Solutions',
+      url: SITE_URL,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Explore Research Solutions',
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo512.png` },
+    },
+    url: `${SITE_URL}/blogs/${meta.slug}`,
+    mainEntityOfPage: `${SITE_URL}/blogs/${meta.slug}`,
+  };
+
+  // FAQ Schema (JSON-LD)
+  const faqSchema = meta.faqs && meta.faqs.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: meta.faqs.map((f) => ({
+          '@type': 'Question',
+          name: f.question,
+          acceptedAnswer: { '@type': 'Answer', text: f.answer },
+        })),
+      }
+    : null;
+
+  const jsonLd = faqSchema ? [articleSchema, faqSchema] : articleSchema;
+
   return (
     <>
       <Seo
@@ -60,6 +130,7 @@ const BlogDetail = () => {
         description={meta.excerpt}
         path={`/blogs/${meta.slug}`}
         keywords={`${meta.category}, academic blog, research, Explore S`}
+        jsonLd={jsonLd}
       />
       <Header parentMenu="home" topbarEnable="enable" />
 
@@ -82,6 +153,12 @@ const BlogDetail = () => {
                 <span>{meta.author}</span>
                 <span className="bd-hero__dot" aria-hidden="true">·</span>
                 <span>{meta.date}</span>
+                {meta.readingTime && (
+                  <>
+                    <span className="bd-hero__dot" aria-hidden="true">·</span>
+                    <span>{meta.readingTime}</span>
+                  </>
+                )}
               </div>
             </div>
           </section>
@@ -101,10 +178,7 @@ const BlogDetail = () => {
               )}
 
               <div className="bd-prose">
-                <ReactMarkdown
-                  remarkPlugins={[remarkGfm]}
-                  components={mdComponents}
-                >
+                <ReactMarkdown remarkPlugins={[remarkGfm]} components={mdComponents}>
                   {content}
                 </ReactMarkdown>
               </div>
@@ -112,6 +186,20 @@ const BlogDetail = () => {
 
             {/* Sidebar */}
             <aside className="bd-sidebar">
+              {/* Table of Contents */}
+              {toc.length > 0 && (
+                <nav className="bd-toc" aria-label="Table of contents">
+                  <p className="bd-toc__title">Table of Contents</p>
+                  <ul className="bd-toc__list">
+                    {toc.map((item) => (
+                      <li key={item.id} className={`bd-toc__item bd-toc__item--h${item.level}`}>
+                        <a href={`#${item.id}`} className="bd-toc__link">{item.text}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              )}
+
               <div className="bd-cta-box">
                 <h3 className="bd-cta-box__title">Need Research Help?</h3>
                 <p className="bd-cta-box__body">
@@ -126,6 +214,9 @@ const BlogDetail = () => {
                 >
                   WhatsApp Us ➔
                 </a>
+                <Link to="/contact" className="bd-cta-box__secondary">
+                  Get Free Consultation
+                </Link>
               </div>
 
               {ALL_BLOGS.length > 1 && (

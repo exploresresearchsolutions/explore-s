@@ -125,7 +125,7 @@ const homeContent = {
       { name: "Anjali Gautam", image: "/community/anjali-gautam.webp" },
       { name: "Aditya Pal", image: "/community/aditya-pal.webp" },
       { name: "Rohil R-Dass", image: "/community/rohil-r-dass.webp" },
-      { name: "Lovely", image: "/community/lovely.webp" },
+      { name: "Lovely", image: "/community/Lovely.webp" },
       { name: "Rahul Sharma", image: "/community/rahul-sharma.webp" },
       { name: "Shubham Saxena", image: "/community/shubham-saxena.webp" },
 

@@ -37,6 +37,9 @@ const Blogs = () => {
                 {ALL_BLOGS.map(({ meta: c }) => (
                   <li key={c.slug} className="es-blog__card">
                     <div className="es-blog__media" aria-hidden="true">
+                      {c.coverImage && (
+                        <img src={c.coverImage} alt="" className="es-blog__media-img" />
+                      )}
                       <span className="es-blog__cat">{c.category}</span>
                       <span className="es-blog__headline">{c.headline}</span>
                     </div>
