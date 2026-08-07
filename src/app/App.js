@@ -21,6 +21,7 @@ import BecomeAPartner from '../pages/become-a-partner';
 import Career from '../pages/career';
 import Blogs from '../pages/blogs';
 import BlogDetail from '../pages/blogs/BlogDetail';
+import CourseMain, { ThankYou } from '../pages/course';
 import Error from '../pages/404';
 import LoadTop from '../components/ScrollTop/LoadTop'
 import ScrollToHash from '../components/ScrollTop/ScrollToHash'
@@ -64,6 +65,9 @@ const App = () => {
                     <Route path="/career" element={<Career />} />
                     <Route path="/blogs" element={<Blogs />} />
                     <Route path="/blogs/:slug" element={<BlogDetail />} />
+                    <Route path="/course" element={<CourseMain />} />
+                    <Route path="/course/thank-you" element={<ThankYou />} />
+                    <Route path="/course/:slug" element={<CourseMain />} />
                     <Route path='*' element={<Error />} />
                 </Routes>
                 <WhatsAppButton />
