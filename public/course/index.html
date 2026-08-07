@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explore S Research Solutions | Career-Ready IT Programs with Job Guarantee Support</title>
+<meta name="description" content="Launch your IT career with Explore S Research Solutions — Job Guarantee career programs in Networking, Cybersecurity, Data Science, AI/ML & Full Stack Development. Turning Complexity Into Clarity.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="base.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header id="siteHeader">
+  <div class="nav-wrap">
+    <a href="#home" class="brand">
+      <img src="logo.png" alt="Explore S Research Solutions logo">
+      <div class="brand-text">
+        <span class="b1">Explore S Research Solutions</span>
+        <span class="b2">Turning Complexity Into Clarity</span>
+      </div>
+    </a>
+    <nav class="main-nav">
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#whyus">Why Us</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+    <div class="header-cta">
+      <a href="tel:+917900467805" class="header-phone"><i class="fa-solid fa-phone-volume"></i> +91 79004 67805</a>
+      <a href="#contact" class="btn btn-primary btn-sm">Enquire Now</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="overlay" id="overlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="menu-close" id="menuClose"><i class="fa-solid fa-xmark"></i></button>
+  <a href="#about">About Us</a>
+  <a href="#services">Services</a>
+  <a href="#whyus">Why Us</a>
+  <a href="#testimonials">Testimonials</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact Us</a>
+  <a href="#contact" class="btn btn-primary">Enquire Now</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-blob blob1"></div>
+  <div class="hero-blob blob2"></div>
+  <div class="hero-scanner"></div>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow">Job Guarantee Career Programs</span>
+      <h1>Turning Career <span>Complexity</span> Into Clarity</h1>
+      <p>Explore S Research Solutions designs career-ready IT, Networking, Cybersecurity, Cloud, Data Science, AI/ML &amp; Full Stack programs — built with hands-on training and dedicated placement support to take you from learner to hired.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Enquire Now</a>
+        <a href="#services" class="btn btn-outline"><i class="fa-solid fa-compass"></i> Explore Programs</a>
+      </div>
+      <div class="hero-trustline">
+        <div><i class="fa-solid fa-shield-halved"></i> Job Guarantee Support</div>
+        <div><i class="fa-solid fa-map-location-dot"></i> Pan-India Placement Network</div>
+        <div><i class="fa-solid fa-user-graduate"></i> Mentor-Led Practical Training</div>
+      </div>
+    </div>
+    <div class="hero-form-card reveal">
+      <div class="hf-eyebrow"><i class="fa-solid fa-phone-volume"></i> Free Career Counselling</div>
+      <h3>Get Your Free Career Roadmap</h3>
+      <p>Share your details — our counsellor calls you within a few hours.</p>
+      <form id="heroEnquiryForm">
+        <div class="form-row">
+          <div class="field full"><label>Full Name *</label><input type="text" name="name" placeholder="Your full name" required></div>
+        </div>
+        <div class="form-row">
+          <div class="field full"><label>Mobile Number *</label><input type="tel" name="phone" placeholder="10-digit mobile number" pattern="[0-9+\- ]{7,15}" required></div>
+        </div>
+        <div class="form-row">
+          <div class="field full">
+            <label>Course Interested In *</label>
+            <select name="course" id="heroCourseSelect" required>
+              <option value="" disabled selected>Select a program</option>
+              <option>Windows Admin</option>
+              <option>Networking &amp; System Admin</option>
+              <option>Master Networking &amp; CEH / Cloud</option>
+              <option>Data Scientist with AI</option>
+              <option>AI / ML Advanced Program</option>
+              <option>Full Stack Developer (MERN / Java)</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field full"><label>City</label><input type="text" name="city" placeholder="Your city"></div>
+        </div>
+        <button type="submit" class="btn btn-primary submit-btn"><i class="fa-solid fa-paper-plane"></i> <span class="btn-label">Get Free Callback</span></button>
+        <div class="form-note"><i class="fa-solid fa-lock"></i> Your details stay confidential.</div>
+        <div class="form-success" id="heroFormSuccess"><i class="fa-solid fa-circle-check"></i> Thanks! Redirecting you to WhatsApp...</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="info-bar">
+  <div class="container info-bar-grid">
+    <div class="info-bar-item"><div class="ic"><i class="fa-solid fa-video"></i></div><div><h5>Live Classes</h5><p>Online &amp; Offline Both</p></div></div>
+    <div class="info-bar-item"><div class="ic"><i class="fa-solid fa-credit-card"></i></div><div><h5>EMI Options</h5><p>Easy No-Cost EMI Available</p></div></div>
+    <div class="info-bar-item"><div class="ic"><i class="fa-solid fa-hourglass-half"></i></div><div><h5>2.5 – 9 Months</h5><p>Flexible Course Durations</p></div></div>
+    <div class="info-bar-item"><div class="ic"><i class="fa-solid fa-earth-asia"></i></div><div><h5>Pan-India Admissions</h5><p>Open for Students Across India</p></div></div>
+  </div>
+</div>
+
+<div class="strip">
+  <div class="strip-track">
+    <span><i class="fa-solid fa-shield-halved"></i> Job Guarantee Programs</span>
+    <span><i class="fa-solid fa-user-tie"></i> Personalised Career Counselling</span>
+    <span><i class="fa-solid fa-laptop-code"></i> Hands-On Practical Training</span>
+    <span><i class="fa-solid fa-map-location-dot"></i> Pan-India Placement Support</span>
+    <span><i class="fa-solid fa-certificate"></i> Industry-Aligned Curriculum</span>
+    <span><i class="fa-solid fa-shield-halved"></i> Job Guarantee Programs</span>
+    <span><i class="fa-solid fa-user-tie"></i> Personalised Career Counselling</span>
+    <span><i class="fa-solid fa-laptop-code"></i> Hands-On Practical Training</span>
+    <span><i class="fa-solid fa-map-location-dot"></i> Pan-India Placement Support</span>
+    <span><i class="fa-solid fa-certificate"></i> Industry-Aligned Curriculum</span>
+  </div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-visual reveal">
+      <div class="about-panel">
+        <div class="logomark"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <h3>Clarity-first career guidance</h3>
+        <p>We simplify the confusing world of IT careers — matching every learner to the right program, the right skills, and the right support to get hired.</p>
+        <div class="about-stats">
+          <div><div class="num">6</div><div class="lbl">Career Programs</div></div>
+          <div><div class="num">100%</div><div class="lbl">Placement Focused</div></div>
+          <div><div class="num">Pan-India</div><div class="lbl">Hiring Network</div></div>
+          <div><div class="num">1:1</div><div class="lbl">Mentor Support</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="about-copy reveal">
+      <span class="eyebrow">About Explore S Research Solutions</span>
+      <h2>We turn career confusion into a clear, guided path to placement</h2>
+      <p>Choosing the right IT career path can feel overwhelming — dozens of technologies, unclear eligibility, and no clarity on what actually leads to a job. Explore S Research Solutions exists to remove that confusion.</p>
+      <p>Every program we design is mapped to real hiring requirements, backed by structured mentorship, and supported by a dedicated Job Guarantee placement framework — so you always know exactly what to learn and where it leads.</p>
+      <div class="about-points">
+        <div class="about-point"><div class="ic"><i class="fa-solid fa-route"></i></div><div><h4>Guided Path</h4><p>From counselling to placement, every step is mapped for you.</p></div></div>
+        <div class="about-point"><div class="ic"><i class="fa-solid fa-chalkboard-user"></i></div><div><h4>Expert Mentors</h4><p>Learn from practitioners who train for real job readiness.</p></div></div>
+        <div class="about-point"><div class="ic"><i class="fa-solid fa-briefcase"></i></div><div><h4>Placement Focus</h4><p>Every program is built around fresher hiring requirements.</p></div></div>
+        <div class="about-point"><div class="ic"><i class="fa-solid fa-comments"></i></div><div><h4>Personal Counselling</h4><p>One-on-one guidance to choose the program that fits you.</p></div></div>
+      </div>
+      <a href="#contact" class="btn btn-navy" style="margin-top:30px;"><i class="fa-solid fa-paper-plane"></i> Talk to a Career Counsellor</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" style="justify-content:center;display:inline-flex;">Our Services</span>
+      <h2>Job Guarantee career programs, built for how hiring actually works</h2>
+      <p>Every program below is designed around real fresher-hiring requirements — pick the track that fits your background, or talk to our counsellors for a personalised recommendation.</p>
+    </div>
+
+    <div class="course-grid">
+
+      <div class="course-card reveal">
+        <span class="course-tag"><i class="fa-solid fa-clock"></i> 2.5 Months</span>
+        <div class="course-icon"><i class="fa-solid fa-desktop"></i></div>
+        <h3>Windows Admin</h3>
+        <div class="course-meta"><span><i class="fa-solid fa-hourglass-half"></i> Duration: 2.5 Months</span></div>
+        <p class="desc">An entry-level IT infrastructure program built for practical job readiness — perfect for freshers starting their IT career, even with basic English communication.</p>
+        <div class="course-topics">
+          <span>A+ Fundamentals</span><span>N+ Networking</span><span>Windows Server Admin</span><span>Microsoft 365</span>
+        </div>
+        <div class="card-cta"><a href="/course/windows-admin" class="details">Enquire Now <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+
+      <div class="course-card reveal">
+        <span class="course-tag"><i class="fa-solid fa-clock"></i> 4.5 Months</span>
+        <div class="course-icon"><i class="fa-solid fa-network-wired"></i></div>
+        <h3>Networking &amp; System Admin</h3>
+        <div class="course-meta"><span><i class="fa-solid fa-hourglass-half"></i> Duration: 4.5 Months</span></div>
+        <p class="desc">A practical networking and system administration track for candidates with confident communication, aiming for stronger IT fresher opportunities.</p>
+        <div class="course-topics">
+          <span>CCNA 200-301</span><span>Windows Server Admin</span><span>Monitoring Tools</span><span>Microsoft 365</span>
+        </div>
+        <div class="card-cta"><a href="/course/networking-system-admin" class="details">Enquire Now <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+
+      <div class="course-card flag reveal">
+        <span class="course-tag"><i class="fa-solid fa-clock"></i> 7-8 Months</span>
+        <div class="course-icon"><i class="fa-solid fa-user-shield"></i></div>
+        <h3>Master Networking &amp; CEH / Cloud</h3>
+        <div class="course-meta"><span><i class="fa-solid fa-hourglass-half"></i> Duration: 7-8 Months</span></div>
+        <p class="desc">An advanced infrastructure career track for IT graduates targeting networking, cyber security, cloud and support-engineer roles.</p>
+        <div class="course-topics">
+          <span>CCNA 200-301</span><span>Linux Basics</span><span>CEH + VAPT</span><span>Cloud (AWS)</span>
+        </div>
+        <div class="card-cta"><a href="/course/networking-ceh-cloud" class="details">Enquire Now <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+
+      <div class="course-card reveal">
+        <span class="course-tag"><i class="fa-solid fa-clock"></i> 6-7 Months</span>
+        <div class="course-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <h3>Data Scientist with AI</h3>
+        <div class="course-meta"><span><i class="fa-solid fa-hourglass-half"></i> Duration: 6-7 Months</span></div>
+        <p class="desc">A data and AI career track for IT graduates who want practical skills for analytics, reporting and entry-level data roles.</p>
+        <div class="course-topics">
+          <span>Python</span><span>Power BI</span><span>Machine Learning</span><span>NLP</span>
+        </div>
+        <div class="card-cta"><a href="/course/data-science-ai" class="details">Enquire Now <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+
+      <div class="course-card flag reveal">
+        <span class="course-tag"><i class="fa-solid fa-clock"></i> 8-9 Months</span>
+        <div class="course-icon"><i class="fa-solid fa-brain"></i></div>
+        <h3>AI / ML Advanced Program</h3>
+        <div class="course-meta"><span><i class="fa-solid fa-hourglass-half"></i> Duration: 8-9 Months</span></div>
+        <p class="desc">Our deepest AI/ML program — covering machine learning, generative AI and deployment concepts for advanced, future-ready roles.</p>
+        <div class="course-topics">
+          <span>Deep Learning</span><span>Generative AI</span><span>RAG &amp; Agentic AI</span><span>API Deployment</span>
+        </div>
+        <div class="card-cta"><a href="/course/ai-ml-advanced" class="details">Enquire Now <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+
+      <div class="course-card reveal">
+        <span class="course-tag"><i class="fa-solid fa-clock"></i> 6 Months</span>
+        <div class="course-icon"><i class="fa-solid fa-code"></i></div>
+        <h3>Full Stack Developer — MERN / Java</h3>
+        <div class="course-meta"><span><i class="fa-solid fa-hourglass-half"></i> Duration: 6 Months</span></div>
+        <p class="desc">A full stack developer career track for IT graduates targeting software developer, web developer and entry-level coding roles.</p>
+        <div class="course-topics">
+          <span>React.js</span><span>Node.js / Java</span><span>Spring Boot</span><span>MongoDB / MySQL</span>
+        </div>
+        <div class="card-cta"><a href="/course/full-stack-developer" class="details">Enquire Now <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY US ===== -->
+<section class="whyus" id="whyus">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" style="justify-content:center;display:inline-flex;color:#fff;">Why Choose Us</span>
+      <h2>Clarity at every step — from enquiry to placement</h2>
+      <p>We built Explore S Research Solutions to remove the guesswork from IT career planning.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal"><i class="fa-solid fa-shield-halved"></i><h4>Job Guarantee Support</h4><p>Structured placement assistance built into every eligible program, not an afterthought.</p></div>
+      <div class="why-card reveal"><i class="fa-solid fa-user-tie"></i><h4>Personalised Counselling</h4><p>One-on-one guidance to match your background and goals to the right program.</p></div>
+      <div class="why-card reveal"><i class="fa-solid fa-laptop-code"></i><h4>Hands-On Curriculum</h4><p>Practical, tool-based training designed to mirror real workplace requirements.</p></div>
+      <div class="why-card reveal"><i class="fa-solid fa-map-location-dot"></i><h4>Pan-India Network</h4><p>Placement support that isn't limited to a single city or region.</p></div>
+      <div class="why-card reveal"><i class="fa-solid fa-chalkboard-user"></i><h4>Mentor-Led Learning</h4><p>Guided by practitioners who understand what hiring teams actually look for.</p></div>
+      <div class="why-card reveal"><i class="fa-solid fa-diagram-project"></i><h4>Structured Roadmap</h4><p>Every course is sequenced so complex topics build up in a clear, simple order.</p></div>
+      <div class="why-card reveal"><i class="fa-solid fa-headset"></i><h4>Always Reachable</h4><p>A direct WhatsApp line to your counsellor whenever you have a question.</p></div>
+      <div class="why-card reveal"><i class="fa-solid fa-ranking-star"></i><h4>Outcome Driven</h4><p>Every decision we make is filtered through one question: does this help you get hired?</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="process">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" style="justify-content:center;display:inline-flex;">How It Works</span>
+      <h2>Your path from enquiry to placement</h2>
+      <p>A simple, guided process — no confusion, no guesswork.</p>
+    </div>
+    <div class="process-track">
+      <div class="process-step reveal"><div class="process-num">01</div><h4>Enquire</h4><p>Share your details and the program you're interested in.</p></div>
+      <div class="process-step reveal"><div class="process-num">02</div><h4>Counselling Call</h4><p>Our counsellor understands your background and recommends the right fit.</p></div>
+      <div class="process-step reveal"><div class="process-num">03</div><h4>Enroll &amp; Learn</h4><p>Start your hands-on, mentor-led training program.</p></div>
+      <div class="process-step reveal"><div class="process-num">04</div><h4>Placement Support</h4><p>Get dedicated Job Guarantee placement assistance, Pan-India.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BAND ===== -->
+<section class="cta-band" style="padding:64px 0;">
+  <div class="container cta-band-inner">
+    <div>
+      <h3>Not sure which program fits you?</h3>
+      <p>Talk to our career counsellor on a quick call — free of cost, no obligation.</p>
+    </div>
+    <a href="#contact" class="btn btn-navy"><i class="fa-solid fa-phone"></i> Enquire Now</a>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" style="justify-content:center;display:inline-flex;">Testimonials</span>
+      <h2>Trusted by learners who wanted clarity, not confusion</h2>
+      <p>Real experiences from learners who found their path with Explore S Research Solutions.</p>
+    </div>
+    <div class="t-grid">
+      <div class="t-card reveal">
+        <i class="fa-solid fa-quote-right t-quote-ic"></i>
+        <div class="t-stars">★★★★★</div>
+        <p class="quote">"I had zero clarity about which IT path to choose. The counselling call alone was worth it — they mapped out exactly what I needed to learn and why."</p>
+        <div class="t-person"><div class="t-avatar">R</div><div><div class="tname">Rohit S.</div><div class="trole">Networking &amp; System Admin Program</div></div></div>
+      </div>
+      <div class="t-card reveal">
+        <i class="fa-solid fa-quote-right t-quote-ic"></i>
+        <div class="t-stars">★★★★★</div>
+        <p class="quote">"The hands-on approach made all the difference. I wasn't just watching lectures, I was building real skills the mentors clearly cared about."</p>
+        <div class="t-person"><div class="t-avatar">P</div><div><div class="tname">Priya M.</div><div class="trole">Data Scientist with AI Program</div></div></div>
+      </div>
+      <div class="t-card reveal">
+        <i class="fa-solid fa-quote-right t-quote-ic"></i>
+        <div class="t-stars">★★★★★</div>
+        <p class="quote">"What stood out was how organised everything was — from enquiry to enrolment to placement support. Nothing felt confusing at any stage."</p>
+        <div class="t-person"><div class="t-avatar">A</div><div><div class="tname">Aman K.</div><div class="trole">Full Stack Developer Program</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" style="justify-content:center;display:inline-flex;">FAQ</span>
+      <h2>Questions, answered clearly</h2>
+      <p>Still unsure about something? Reach out and our counsellors will help.</p>
+    </div>
+    <div class="faq-wrap reveal">
+      <div class="faq-item open">
+        <div class="faq-q">Do your programs really offer a Job Guarantee? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a"><p>Yes. Our eligible programs are backed by a structured Job Guarantee placement framework, with dedicated support to help you get hired after successful completion. Speak to our counsellor for the exact terms of your chosen program.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Who is eligible for these programs? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a"><p>Eligibility varies by program — including educational background, pass-out year and age limit. Our counsellor will confirm exactly which program you qualify for during your enquiry call.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I need a strong technical background to join? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a"><p>Not necessarily. Some of our programs, like Windows Admin, are designed for IT and non-IT beginners alike, while advanced tracks like AI/ML are best suited for IT graduates. We'll help you find the right fit.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is there an age limit to enrol? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a"><p>Yes, each program has its own age eligibility criteria. Our counsellor will guide you on which program matches your profile.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How much does a program cost? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a"><p>Program fees depend on the course and any current offers. Our counsellor will walk you through complete fee details on a personal call — simply click "Enquire Now" to get started.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is placement support available across India? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a"><p>Yes, we offer Pan-India placement support so you're not limited to opportunities in a single city or region.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do I get started? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a"><p>Just fill out the enquiry form or message us directly on WhatsApp. Our counsellor will call you to understand your background and recommend the best-fit program.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div class="contact-info">
+      <div class="section-head">
+        <span class="eyebrow" style="color:var(--blue-light);">Contact Us</span>
+        <h2>Let's find your right career path</h2>
+        <p>Fill the form or reach out directly — our counsellor typically responds within a few hours.</p>
+      </div>
+      <div class="info-item"><div class="ic"><i class="fa-solid fa-phone"></i></div><div><h4>Call / WhatsApp</h4><a href="https://wa.me/917900467805" target="_blank" rel="noopener">+91 79004 67805</a></div></div>
+      <div class="info-item"><div class="ic"><i class="fa-solid fa-envelope"></i></div><div><h4>Email</h4><a href="mailto:support@exploresresearchsolutions.in">support@exploresresearchsolutions.in</a></div></div>
+      <div class="info-item"><div class="ic"><i class="fa-solid fa-location-dot"></i></div><div><h4>Office Address</h4><p>Plot No. 21 &amp; 21A, Noida-Greater Noida Expressway, Sector 142, Noida, Uttar Pradesh 201304</p></div></div>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps?q=Plot+No.+21+%26+21A,+Noida-Greater+Noida+Expressway,+Sector+142,+Noida,+Uttar+Pradesh+201304&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+    <div class="contact-form reveal">
+      <h3>Send an enquiry</h3>
+      <p>Tell us a bit about yourself and we'll get back to you shortly.</p>
+      <form id="enquiryForm">
+        <div class="form-row">
+          <div class="field"><label>Full Name *</label><input type="text" name="name" placeholder="Your full name" required></div>
+          <div class="field"><label>Phone Number *</label><input type="tel" name="phone" placeholder="10-digit mobile number" pattern="[0-9+\- ]{7,15}" required></div>
+        </div>
+        <div class="form-row">
+          <div class="field full"><label>Email Address *</label><input type="email" name="email" placeholder="you@example.com" required></div>
+        </div>
+        <div class="form-row">
+          <div class="field full">
+            <label>Course Interested In *</label>
+            <select name="course" id="courseSelect" required>
+              <option value="" disabled selected>Select a program</option>
+              <option>Windows Admin</option>
+              <option>Networking &amp; System Admin</option>
+              <option>Master Networking &amp; CEH / Cloud</option>
+              <option>Data Scientist with AI</option>
+              <option>AI / ML Advanced Program</option>
+              <option>Full Stack Developer (MERN / Java)</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row" id="otherCourseField">
+          <div class="field full"><label>Please specify</label><input type="text" name="otherCourse" placeholder="Tell us which course you're looking for"></div>
+        </div>
+        <div class="form-row">
+          <div class="field full"><label>Message</label><textarea name="message" placeholder="Tell us a bit about your background or questions..."></textarea></div>
+        </div>
+        <button type="submit" class="btn btn-primary submit-btn"><i class="fa-solid fa-paper-plane"></i> <span class="btn-label">Submit Enquiry</span></button>
+        <div class="form-note"><i class="fa-solid fa-lock"></i> Your details are kept confidential and used only to contact you about your enquiry.</div>
+        <div class="form-success" id="formSuccess"><i class="fa-solid fa-circle-check"></i> Thanks! Redirecting you to WhatsApp to confirm your enquiry...</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <a href="#home" class="brand">
+        <img src="logo.png" alt="Explore S Research Solutions logo" style="height:46px;">
+        <div class="brand-text"><span class="b1">Explore S Research Solutions</span><span class="b2">Turning Complexity Into Clarity</span></div>
+      </a>
+      <p>Career-ready IT, Networking, Cybersecurity, Data Science and Development programs — guided by expert mentors, backed by dedicated placement support.</p>
+      <div class="footer-social">
+        <a href="https://wa.me/917900467805" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="mailto:support@exploresresearchsolutions.in" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="tel:+917900467805" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
+      </div>
+    </div>
+    <div>
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#whyus">Why Us</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Programs</h5>
+      <ul>
+        <li><a href="/course/windows-admin">Windows Admin</a></li>
+        <li><a href="/course/networking-system-admin">Networking &amp; System Admin</a></li>
+        <li><a href="/course/networking-ceh-cloud">Networking &amp; CEH / Cloud</a></li>
+        <li><a href="/course/data-science-ai">Data Scientist with AI</a></li>
+        <li><a href="/course/ai-ml-advanced">AI / ML Program</a></li>
+        <li><a href="/course/full-stack-developer">Full Stack Developer</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Get In Touch</h5>
+      <ul>
+        <li><a href="https://wa.me/917900467805" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" style="color:#25D366;margin-right:6px;"></i>+91 79004 67805</a></li>
+        <li><a href="mailto:support@exploresresearchsolutions.in"><i class="fa-solid fa-envelope" style="margin-right:6px;"></i>support@exploresresearchsolutions.in</a></li>
+        <li><a href="#contact" class="btn btn-primary btn-sm" style="margin-top:8px;">Enquire Now</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <span id="year"></span> Explore S Research Solutions. All rights reserved.</span>
+    <a href="https://www.exploresresearchsolutions.in" target="_blank" rel="noopener">www.exploresresearchsolutions.in</a>
+  </div>
+</footer>
+
+<!-- ===== FLOATING BUTTONS ===== -->
+<a href="https://wa.me/917900467805?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20your%20career%20programs." target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+  <span class="wa-tooltip">Chat with us</span>
+</a>
+<button class="top-btn" id="topBtn" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script>
+// Header scroll state
+const header = document.getElementById('siteHeader');
+const topBtn = document.getElementById('topBtn');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 40);
+  topBtn.classList.toggle('show', window.scrollY > 500);
+});
+topBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+// Mobile menu
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const menuClose = document.getElementById('menuClose');
+const overlay = document.getElementById('overlay');
+function openMenu(){ mobileMenu.classList.add('open'); overlay.classList.add('show'); }
+function closeMenu(){ mobileMenu.classList.remove('open'); overlay.classList.remove('show'); }
+hamburgerBtn.addEventListener('click', openMenu);
+menuClose.addEventListener('click', closeMenu);
+overlay.addEventListener('click', closeMenu);
+document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', closeMenu));
+
+// Scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:0.12});
+revealEls.forEach(el => io.observe(el));
+
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item => {
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  if(item.classList.contains('open')){ a.style.maxHeight = a.scrollHeight + 'px'; }
+  q.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(other => {
+      other.classList.remove('open');
+      other.querySelector('.faq-a').style.maxHeight = null;
+    });
+    if(!isOpen){
+      item.classList.add('open');
+      a.style.maxHeight = a.scrollHeight + 'px';
+    }
+  });
+});
+
+// Other course field toggle
+const courseSelect = document.getElementById('courseSelect');
+const otherCourseField = document.getElementById('otherCourseField');
+if(courseSelect){
+  courseSelect.addEventListener('change', () => {
+    otherCourseField.style.display = courseSelect.value === 'Other' ? 'grid' : 'none';
+  });
+}
+
+// Shared submit handler -> Google Sheet + WhatsApp redirect
+const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbyTi215gNpWMTCpnBcYxaloSsgJvvScB-u7I2k5Kgp-VVSSn6nJv3T8IyH3na_LPHNO/exec';
+
+function wireEnquiryForm(formId, successId, sourceLabel){
+  const form = document.getElementById(formId);
+  if(!form) return;
+  const formSuccess = document.getElementById(successId);
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    const btn = form.querySelector('.submit-btn');
+    const btnLabel = btn.querySelector('.btn-label');
+    const originalLabel = btnLabel.textContent;
+
+    const name = form.name.value.trim();
+    const phone = form.phone.value.trim();
+    const email = form.email ? form.email.value.trim() : '';
+    const city = form.city ? form.city.value.trim() : '';
+    let course = form.course.value;
+    if(course === 'Other' && form.otherCourse){
+      const other = form.otherCourse.value.trim();
+      course = other ? other : 'Other';
+    }
+    const message = form.message ? form.message.value.trim() : '';
+
+    btn.disabled = true;
+    btnLabel.textContent = 'Sending...';
+
+    const payload = { name, phone, email, city, course, message, source: sourceLabel, date: new Date().toLocaleString('en-IN') };
+
+    try{
+      await fetch(GOOGLE_SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      });
+    }catch(err){
+      console.error('Sheet submission error:', err);
+    }
+
+    const waMessage =
+      'Hello Explore S Research Solutions, I would like to enquire about your career programs.%0A%0A' +
+      'Name: ' + encodeURIComponent(name) + '%0A' +
+      'Phone: ' + encodeURIComponent(phone) + '%0A' +
+      (email ? 'Email: ' + encodeURIComponent(email) + '%0A' : '') +
+      (city ? 'City: ' + encodeURIComponent(city) + '%0A' : '') +
+      'Course Interested: ' + encodeURIComponent(course) + '%0A' +
+      'Message: ' + encodeURIComponent(message || 'N/A');
+
+    const waUrl = 'https://wa.me/917900467805?text=' + waMessage;
+
+    btnLabel.textContent = 'Sent!';
+    if(formSuccess) formSuccess.classList.add('show');
+
+    setTimeout(() => {
+      window.open(waUrl, '_blank');
+      form.reset();
+      if(otherCourseField) otherCourseField.style.display = 'none';
+      btn.disabled = false;
+      btnLabel.textContent = originalLabel;
+      if(formSuccess) formSuccess.classList.remove('show');
+      window.location.href = 'thank-you';
+    }, 900);
+  });
+}
+
+wireEnquiryForm('enquiryForm', 'formSuccess', 'Explore S Landing Page - Contact Form');
+wireEnquiryForm('heroEnquiryForm', 'heroFormSuccess', 'Explore S Landing Page - Hero Quick Form');
+
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

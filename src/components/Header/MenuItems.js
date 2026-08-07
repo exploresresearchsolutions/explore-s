@@ -18,6 +18,9 @@ const MenuItems = (props) => {
             <li className={location.pathname === '/services' ? 'menu-active' : ''}>
                 <Link to="/services">Services</Link>
             </li>
+            <li className={location.pathname.startsWith('/course') ? 'menu-active' : ''}>
+                <a href="/course/">Courses</a>
+            </li>
             <li className={location.pathname === '/become-a-partner' ? 'menu-active' : ''}>
                 <Link to="/become-a-partner">Become a Partner</Link>
             </li>

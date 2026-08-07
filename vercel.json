@@ -1,6 +1,42 @@
 {
   "rewrites": [
     {
+      "source": "/course",
+      "destination": "/course/index.html"
+    },
+    {
+      "source": "/course/",
+      "destination": "/course/index.html"
+    },
+    {
+      "source": "/course/windows-admin",
+      "destination": "/course/course-windows-admin.html"
+    },
+    {
+      "source": "/course/networking-system-admin",
+      "destination": "/course/course-networking-system-admin.html"
+    },
+    {
+      "source": "/course/networking-ceh-cloud",
+      "destination": "/course/course-networking-ceh-cloud.html"
+    },
+    {
+      "source": "/course/data-science-ai",
+      "destination": "/course/course-data-science-ai.html"
+    },
+    {
+      "source": "/course/ai-ml-advanced",
+      "destination": "/course/course-ai-ml-advanced.html"
+    },
+    {
+      "source": "/course/full-stack-developer",
+      "destination": "/course/course-full-stack-developer.html"
+    },
+    {
+      "source": "/course/thank-you",
+      "destination": "/course/thank-you.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
