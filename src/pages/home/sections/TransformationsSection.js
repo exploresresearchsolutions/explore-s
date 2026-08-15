@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import homeContent from "../../../data/homeContent";
 import aiCourses from "../../../assets/images/bootcamps/ai-courses.webp";
 import phdMasters from "../../../assets/images/bootcamps/phd-masters-medical.webp";
 import thesisMarketing from "../../../assets/images/bootcamps/thesis-digital-marketing.webp";
+
+const MS_ENROLL_URL = 'https://forms.cloud.microsoft/r/CkrBXvynrJ?origin=lprLink';
 
 const imageMap = {
   "ai-courses": aiCourses,
@@ -34,8 +35,10 @@ const TransformationsSection = () => {
           <Slider {...settings} className="es-transform__slider">
             {transformations.map((t) => (
               <div key={t.img} className="es-transform__slide">
-                <Link
-                  to={t.to}
+                <a
+                  href={MS_ENROLL_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="es-transform__link"
                   aria-label={t.alt}
                 >
@@ -45,7 +48,7 @@ const TransformationsSection = () => {
                     className="es-transform__img"
                     loading="lazy"
                   />
-                </Link>
+                </a>
               </div>
             ))}
           </Slider>

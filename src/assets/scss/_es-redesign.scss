@@ -1449,3 +1449,129 @@
 .es-blog__body { padding: 20px 22px; display: flex; flex-direction: column; flex: 1; }
 .es-blog__title { font: 600 15px/1.5 $titlefont; color: $titleColor; margin: 0 0 16px; flex: 1; }
 .es-blog__link { font: 700 13px/1 $bodyfont; color: $primaryColor; text-decoration: none; &:hover { color: $accentDark; } }
+
+// ── Career cards ─────────────────────────────────────────────────────────────
+.es-career__grid {
+  display: grid;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  @media (min-width: 640px)  { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1024px) { grid-template-columns: repeat(4, 1fr); }
+}
+
+.es-career-card {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #e3e8ef;
+  box-shadow: 0 2px 12px rgba(11,60,145,.06);
+  overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+
+  // Gradient left bar
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 4px;
+    background: linear-gradient(180deg, $primaryColor 0%, $accentColor 100%);
+    border-radius: 16px 0 0 16px;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 36px rgba(11,60,145,.14);
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+  }
+
+  &__icon {
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  &__num {
+    font: 700 13px/1 $titlefont;
+    color: rgba($primaryColor, .25);
+    letter-spacing: .04em;
+  }
+
+  &__dept {
+    font: 700 10px/1 $bodyfont;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: $accentColor;
+  }
+
+  &__title {
+    font: 700 17px/1.35 $titlefont;
+    color: $titleColor;
+    margin: 0;
+  }
+
+  &__desc {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #5a6a85;
+    margin: 0;
+    flex: 1;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 6px;
+  }
+
+  &__type {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font: 500 12px/1 $bodyfont;
+    color: $primaryColor;
+    background: rgba($primaryColor, .07);
+    border-radius: 20px;
+    padding: 5px 12px;
+    width: fit-content;
+
+    &::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: $accentColor;
+      flex-shrink: 0;
+    }
+  }
+
+  &__cta {
+    display: inline-block;
+    text-align: center;
+    background: $primaryColor;
+    color: #fff;
+    font: 600 13px/1 $bodyfont;
+    padding: 11px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background .2s, transform .15s;
+    letter-spacing: .02em;
+
+    &:hover {
+      background: darken($primaryColor, 8%);
+      color: #fff;
+      transform: translateX(2px);
+    }
+  }
+}

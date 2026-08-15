@@ -6,10 +6,34 @@ import ScrollToTop from '../../components/ScrollTop';
 import Seo from '../../components/Seo';
 
 const openings = [
-  { role: 'Senior Research Consultant', type: 'Full-time · Gurgaon / Remote', desc: 'Guide scholars through thesis, synopsis and publication milestones.' },
-  { role: 'AI & Machine Learning Trainer', type: 'Full-time · Remote', desc: 'Deliver live Python, ML and data-science bootcamps to researchers.' },
-  { role: 'Academic Editor', type: 'Full-time · Gurgaon', desc: 'Proofread, format and elevate manuscripts to journal standards.' },
-  { role: 'Digital Marketing Strategist', type: 'Full-time · Remote', desc: 'Run live masterclasses and manage performance-marketing campaigns.' },
+  {
+    role: 'Senior Research Consultant',
+    type: 'Full-time · Gurgaon / Remote',
+    dept: 'Research',
+    icon: '🎓',
+    desc: 'Guide scholars through thesis, synopsis and publication milestones.',
+  },
+  {
+    role: 'AI & Machine Learning Trainer',
+    type: 'Full-time · Remote',
+    dept: 'Training',
+    icon: '🤖',
+    desc: 'Deliver live Python, ML and data-science bootcamps to researchers.',
+  },
+  {
+    role: 'Academic Editor',
+    type: 'Full-time · Gurgaon',
+    dept: 'Editorial',
+    icon: '✍️',
+    desc: 'Proofread, format and elevate manuscripts to journal standards.',
+  },
+  {
+    role: 'Digital Marketing Strategist',
+    type: 'Full-time · Remote',
+    dept: 'Marketing',
+    icon: '📈',
+    desc: 'Run live masterclasses and manage performance-marketing campaigns.',
+  },
 ];
 
 const Career = () => (
@@ -43,13 +67,20 @@ const Career = () => (
               <h2 className="es-h2">Current Openings</h2>
             </div>
 
-            <ul className="es-events__grid" role="list">
-              {openings.map((o) => (
-                <li key={o.role} className="es-svc-card" style={{ borderTopColor: 'var(--es-accent)' }}>
-                  <span className="es-svc-card__tag">{o.type}</span>
-                  <h3 className="es-svc-card__title">{o.role}</h3>
-                  <p className="es-pillar__desc" style={{ flex: 1 }}>{o.desc}</p>
-                  <Link to="/contact" className="es-btn es-btn--primary es-svc-card__cta">Apply Now</Link>
+            <ul className="es-career__grid" role="list">
+              {openings.map((o, i) => (
+                <li key={o.role} className="es-career-card">
+                  <div className="es-career-card__top">
+                    <span className="es-career-card__icon" aria-hidden="true">{o.icon}</span>
+                    <span className="es-career-card__num">0{i + 1}</span>
+                  </div>
+                  <span className="es-career-card__dept">{o.dept}</span>
+                  <h3 className="es-career-card__title">{o.role}</h3>
+                  <p className="es-career-card__desc">{o.desc}</p>
+                  <div className="es-career-card__footer">
+                    <span className="es-career-card__type">{o.type}</span>
+                    <Link to="/contact" className="es-career-card__cta">Apply Now ➔</Link>
+                  </div>
                 </li>
               ))}
             </ul>

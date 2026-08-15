@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import homeContent from '../../../data/homeContent';
 
+const MS_ENROLL_URL = 'https://forms.cloud.microsoft/r/CkrBXvynrJ?origin=lprLink';
+
 const settings = {
   dots: true,
   arrows: false,
@@ -65,9 +67,14 @@ const ServicesSection = () => {
                       </li>
                     ))}
                   </ul>
-                  <Link to={card.cta.to} className="es-svc-card__cta">
+                  <a
+                    href={card.cta.label === 'Enroll Now' ? MS_ENROLL_URL : card.cta.to}
+                    target={card.cta.label === 'Enroll Now' ? '_blank' : undefined}
+                    rel={card.cta.label === 'Enroll Now' ? 'noopener noreferrer' : undefined}
+                    className="es-svc-card__cta"
+                  >
                     {card.cta.label}
-                  </Link>
+                  </a>
                 </div>
               </article>
             </div>
