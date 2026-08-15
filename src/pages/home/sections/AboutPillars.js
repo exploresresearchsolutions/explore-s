@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 import { fadeUp } from '../../../utils/animations';
 import homeContent from '../../../data/homeContent';
+import { submitLead } from '../../../utils/submitLead';
 
 // Filled white glyphs for the four value pillars.
 const PILLAR_ICONS = {
@@ -22,6 +23,7 @@ const AboutPillars = () => {
   const root = useRef(null);
   const { about, leadForm } = homeContent;
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({
     name: '', email: '', mobile: '', service: '', country: '', message: '', consent: false,
   });
@@ -37,12 +39,22 @@ const AboutPillars = () => {
     setForm((f) => ({ ...f, [name]: type === 'checkbox' ? checked : value }));
   };
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nMobile: ${form.mobile}\nService: ${form.service}\nCountry: ${form.country}\nMessage: ${form.message}`
-    );
-    window.location.href = `mailto:support@exploresresearchsolutions.in?subject=Consultation Request&body=${body}`;
+    if (submitting) return;
+    setSubmitting(true);
+    try {
+      await submitLead({
+        name:    form.name,
+        phone:   form.mobile,
+        email:   form.email,
+        service: form.service,
+        message: [form.country && `Country: ${form.country}`, form.message].filter(Boolean).join(' | '),
+      });
+    } catch (err) {
+      console.error('submitLead error:', err);
+    }
+    setSubmitting(false);
     setSent(true);
   };
 
@@ -93,7 +105,7 @@ const AboutPillars = () => {
             {sent ? (
               <div className="es-leadform__success" role="status">
                 <span aria-hidden="true">✓</span>
-                <p>Thank you! Your request has been prepared — please send the email to reach our team.</p>
+                <p>Thank you! Our team will reach out to you shortly.</p>
               </div>
             ) : (
               <form className="es-leadform__form" onSubmit={submit}>
@@ -113,8 +125,8 @@ const AboutPillars = () => {
                   <input name="consent" checked={form.consent} onChange={update} type="checkbox" required />
                   <span>{leadForm.consent}</span>
                 </label>
-                <button type="submit" className="es-btn es-btn--accent es-leadform__submit">
-                  {leadForm.submitLabel}
+                <button type="submit" disabled={submitting} className="es-btn es-btn--accent es-leadform__submit">
+                  {submitting ? 'Sending…' : leadForm.submitLabel}
                 </button>
               </form>
             )}

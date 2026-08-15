@@ -1,19 +1,39 @@
-import React from 'react';
-import emailjs from 'emailjs-com';
+import React, { useState } from 'react';
+import { submitLead } from '../../utils/submitLead';
 
 const ContactForm = () => {
+  const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
-  function sendEmail(e) {
+  async function sendEmail(e) {
     e.preventDefault();
-
-    emailjs.sendForm('', '', e.target, '')
-      .then((result) => {
-        console.log(result.text);
-      }, (error) => {
-        console.log(error.text);
+    if (submitting) return;
+    setSubmitting(true);
+    const fd = new FormData(e.target);
+    try {
+      await submitLead({
+        name:    fd.get('user_name')    || '',
+        phone:   fd.get('user_phone')   || '',
+        email:   fd.get('user_email')   || '',
+        service: fd.get('user_subject') || '',
+        message: fd.get('user_message') || '',
       });
-
+    } catch (err) {
+      console.error('submitLead error:', err);
+    }
     e.target.reset();
+    setSubmitting(false);
+    setSent(true);
+  }
+
+  if (sent) {
+    return (
+      <div className="es-contact__form-wrap">
+        <div className="es-contact-form__success" role="status">
+          <p>Thank you! We'll get back to you within 24 hours.</p>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -89,12 +109,14 @@ const ContactForm = () => {
         </div>
 
         <div className="es-contact-form__footer">
-          <button type="submit" className="es-btn es-btn--primary es-contact-form__submit">
-            Send Message
-            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
+          <button type="submit" disabled={submitting} className="es-btn es-btn--primary es-contact-form__submit">
+            {submitting ? 'Sending\u2026' : 'Send Message'}
+            {!submitting && (
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            )}
           </button>
           <p className="es-contact-form__privacy">
             We respect your privacy — your details are never shared.

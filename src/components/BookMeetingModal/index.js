@@ -1,17 +1,11 @@
 // src/components/BookMeetingModal/index.js
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import emailjs from 'emailjs-com';
-
-// TODO (client): Replace empty strings with your EmailJS credentials.
-// service ID, template ID, and public key are obtained from https://emailjs.com/
-// Example: emailjs.sendForm('service_abc123', 'template_xyz', e.target, 'PUBLIC_KEY')
-const EMAILJS_SERVICE  = '';
-const EMAILJS_TEMPLATE = '';
-const EMAILJS_PUBLIC   = '';
+import { submitLead } from '../../utils/submitLead';
 
 const BookMeetingModal = () => {
   const [isOpen, setIsOpen]       = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const firstFieldRef             = useRef(null);
   const autoCloseRef              = useRef(null);
   const triggerRef                = useRef(null);
@@ -65,20 +59,28 @@ const BookMeetingModal = () => {
     return () => window.removeEventListener('keydown', onKey);
   }, [isOpen, close]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Optimistic success: mirrors the existing ContactForm.js flow — reset +
-    // show success immediately (the placeholder empty IDs always reject until
-    // the client wires real EmailJS credentials, so we don't gate on .then()).
-    emailjs
-      .sendForm(EMAILJS_SERVICE, EMAILJS_TEMPLATE, e.target, EMAILJS_PUBLIC)
-      .then(
-        () => { /* success handled optimistically below */ },
-        (err) => { console.error('EmailJS error:', err); }
-      );
+    if (submitting) return;
+    setSubmitting(true);
+    const fd = new FormData(e.target);
+    const date = fd.get('meeting_date') || '';
+    const time = fd.get('meeting_time') || '';
+    const dateStr = [date, time].filter(Boolean).join(' ');
+    try {
+      await submitLead({
+        name:    fd.get('user_name')    || '',
+        phone:   fd.get('user_phone')   || '',
+        email:   fd.get('user_email')   || '',
+        service: dateStr ? `Book Meeting – ${dateStr}` : 'Book Meeting',
+        message: fd.get('user_message') || '',
+      });
+    } catch (err) {
+      console.error('submitLead error:', err);
+    }
     e.target.reset();
+    setSubmitting(false);
     setSubmitted(true);
-    // Auto-close after 3 s so the user sees the thank-you message
     autoCloseRef.current = setTimeout(close, 3000);
   };
 
@@ -212,8 +214,8 @@ const BookMeetingModal = () => {
                 </div>
 
                 <div className="es-modal__footer">
-                  <button type="submit" className="es-btn es-btn--accent">
-                    Request Meeting
+                  <button type="submit" className="es-btn es-btn--accent" disabled={submitting}>
+                    {submitting ? 'Sending…' : 'Request Meeting'}
                   </button>
                   <p className="es-modal__note">
                     We'll confirm your slot by email / WhatsApp.
