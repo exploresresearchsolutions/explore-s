@@ -1,15 +1,39 @@
 import { useRef, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { courseBySlug, courses } from './courseData';
+import { submitLead } from '../../utils/submitLead';
 import './course.scss';
 
 const ProgramCard = ({ course }) => <Link className="course-card" to={`/course/${course.slug}`}><span>{course.duration}</span><h2>{course.title}</h2><p>{course.description}</p><strong>View programme →</strong></Link>;
 
 function EnquiryForm({ course }) {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const navigate = useNavigate();
-  const submit = (event) => { event.preventDefault(); setSubmitted(true); setTimeout(() => navigate('/course/thank-you'), 600); };
-  return <form className="course-form" onSubmit={submit}><h2>Get your free career roadmap</h2><p>Our counsellor will contact you within 24 hours.</p><input aria-label="Full name" required placeholder="Full name *" /><input aria-label="Mobile number" required type="tel" placeholder="Mobile number *" /><input aria-label="City" placeholder="Your city" /><select aria-label="Education level" defaultValue=""><option value="" disabled>Education level</option><option>Class 10</option><option>Class 12</option><option>Graduate</option><option>Post Graduate</option></select><button type="submit">{submitted ? 'Thank you!' : `Enquire about ${course.short}`}</button><small>No application fee. Your details stay confidential.</small></form>;
+  const submit = async (event) => {
+    event.preventDefault();
+    if (submitting) return;
+    setSubmitting(true);
+    const fd = new FormData(event.target);
+    const name = fd.get('name') || '';
+    const phone = fd.get('phone') || '';
+    const city = fd.get('city') || '';
+    const education = fd.get('education') || '';
+    try {
+      await submitLead({
+        name,
+        phone,
+        service: `Course Enquiry: ${course.title}`,
+        message: [city && `City: ${city}`, education && `Education: ${education}`].filter(Boolean).join(', '),
+      });
+    } catch (err) {
+      console.error('submitLead error:', err);
+    }
+    setSubmitting(false);
+    setSubmitted(true);
+    setTimeout(() => navigate('/course/thank-you'), 600);
+  };
+  return <form className="course-form" onSubmit={submit}><h2>Get your free career roadmap</h2><p>Our counsellor will contact you within 24 hours.</p><input name="name" aria-label="Full name" required placeholder="Full name *" /><input name="phone" aria-label="Mobile number" required type="tel" placeholder="Mobile number *" /><input name="city" aria-label="City" placeholder="Your city" /><select name="education" aria-label="Education level" defaultValue=""><option value="" disabled>Education level</option><option>Class 10</option><option>Class 12</option><option>Graduate</option><option>Post Graduate</option></select><button type="submit" disabled={submitting}>{submitted ? 'Thank you!' : submitting ? 'Sending…' : `Enquire about ${course.short}`}</button><small>No application fee. Your details stay confidential.</small></form>;
 }
 
 const staticCoursePages = {

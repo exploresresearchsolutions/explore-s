@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
+import { submitLead } from '../../utils/submitLead';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import ScrollToTop from '../../components/ScrollTop';
@@ -44,6 +45,7 @@ const DomainDetailPage = () => {
     name: '', email: '', mobile: '', program: '', qualification: '',
   });
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   if (!domain) return <Navigate to="/domain" replace />;
 
@@ -52,9 +54,22 @@ const DomainDetailPage = () => {
     setForm((f) => ({ ...f, [name]: value }));
   };
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    window.open('https://forms.cloud.microsoft/r/CkrBXvynrJ?origin=lprLink', '_blank', 'noopener,noreferrer');
+    if (submitting) return;
+    setSubmitting(true);
+    try {
+      await submitLead({
+        name:    form.name,
+        phone:   form.mobile,
+        email:   form.email,
+        service: `${domain.name}–${form.program}`,
+        message: form.qualification,
+      });
+    } catch (err) {
+      console.error('submitLead error:', err);
+    }
+    setSubmitting(false);
     setSent(true);
   };
 
@@ -185,7 +200,7 @@ const DomainDetailPage = () => {
                   {sent ? (
                     <div className="dd-form-card__success" role="status">
                       <span aria-hidden="true">✓</span>
-                      <p>Thank you! Your enquiry email is ready — please send it to connect with our team.</p>
+                    <p>Thank you! Our experts will get back to you shortly.</p>
                     </div>
                   ) : (
                     <form className="dd-form" onSubmit={submit} noValidate>
@@ -222,8 +237,8 @@ const DomainDetailPage = () => {
                           ))}
                         </select>
                       </div>
-                      <button type="submit" className="dd-form__submit">
-                        Get Free Guidance <span aria-hidden="true">›</span>
+                      <button type="submit" disabled={submitting} className="dd-form__submit">
+                        {submitting ? 'Sending…' : 'Get Free Guidance'} <span aria-hidden="true">›</span>
                       </button>
                       <p className="dd-form__trust">
                         <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true">
