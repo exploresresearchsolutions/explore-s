@@ -1,115 +1,79 @@
 {
-  "introduction": "Explore S Research Solutions is committed to providing the best research guidance to help you achieve your academic goals. Our team of experts has years of experience in the field and is dedicated to providing personalized assistance to each client.",
+  "introduction": "Explore S Research Solutions offers end-to-end academic and research support — including PhD admission and guidance, honorary doctorate facilitation, thesis and dissertation writing, research paper and journal publication support, UG & PG admissions, law and management courses, biography writing, and profile enhancement — helping researchers confidently reach their academic and professional milestones with expert guidance at every stage.",
   "mainServices": [
     {
       "id": "thesis-writing",
-      "title": "Thesis Guidance & Consultation",
-      "description": "Comprehensive solutions to assist research scholars and students in successfully completing their thesis projects.",
+      "title": "Thesis Writing Support",
+      "description": "Our research and academic writing experts make the thesis journey easier — offering complete support with paper mentoring, editorial and formatting guidance, and submission-readiness support to ensure a high-quality, well-structured thesis at every stage.",
       "image": "https://images.unsplash.com/photo-1744807868759-b0be87385602?q=80&w=1113&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": "paper-writing",
-      "title": "Research Paper Guidance & Mentorship",
-      "description": "Services designed to help students, researchers, and professionals in crafting high-quality academic or research papers.",
+      "title": "Research Paper Writing & Publication Support",
+      "description": "We provide comprehensive research mentoring, editorial guidance, and publication-readiness support for scholars and researchers preparing to submit their work to academic and peer-reviewed journals.",
       "image": "https://images.unsplash.com/photo-1654022963276-ef761eac346e?q=80&w=1219&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": "paper-publication",
-      "title": "Journal Publication Support",
-      "description": "Designed to help researchers, scholars, and authors navigate the complex process of getting their work published in reputable academic journals or publications.",
+      "title": "Journal Publication & Indexing Support",
+      "description": "When you choose Explore S Research Solutions for your academic content requirements, you receive expert editorial guidance, structural support, and publication-ready solutions aligned with recognised journal and university standards.",
       "image": "https://images.unsplash.com/photo-1504465039710-0f49c0a47eb7?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ],
   "detailedOfferings": [
     {
-      "id": "research-methodologies",
-      "title": "Guides to Research Methodologies",
-      "description": "Provide detailed guides on various research methodologies like qualitative, quantitative, mixed-methods, case study, experimental, and survey research.",
+      "id": "phd-admission-guidance",
+      "title": "PhD Admission & Guidance Support",
+      "description": "Complete, end-to-end support for your PhD journey — from university and topic selection through to course completion, including expert guidance on discussions and continuous academic support throughout the PhD.",
       "image": "/guidance.jpg"
     },
     {
-      "id": "writing-tips",
-      "title": "Writing Tips and Techniques",
-      "description": "Offer practical advice on effective academic writing, including structure, proper citation, avoiding plagiarism, and crafting compelling arguments.",
-      "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-      "id": "literature-review",
-      "title": "Literature Review Assistance",
-      "description": "Provide guidance on conducting thorough literature reviews, including searching for literature, critical analysis, and synthesizing findings.",
-      "image": "https://plus.unsplash.com/premium_photo-1677519808834-bb8f10865df9?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-      "id": "data-analysis",
-      "title": "Data Analysis Support",
-      "description": "Offer assistance with data analysis techniques and software tools such as SPSS, R, Python, or NVivo.",
-      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-      "id": "proposal-writing",
-      "title": "Research Proposal Guidance",
-      "description": "Expert support for crafting research proposals, including developing research questions, justifying significance, outlining methodologies, and creating timelines.",
-      "image": "https://plus.unsplash.com/premium_photo-1683491155621-cd42e847d646?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-      "id": "editing-proofreading",
-      "title": "Editing and Proofreading Services",
-      "description": "Professional editing and proofreading to ensure clarity, coherence, and adherence to academic standards.",
-      "image": "https://plus.unsplash.com/premium_photo-1668198395296-035ad11ab16b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-      "id": "research-ethics",
-      "title": "Research Ethics Guidance",
-      "description": "Provide resources on navigating ethical considerations in research, including informed consent, confidentiality, and conflicts of interest.",
-      "image": "https://plus.unsplash.com/premium_photo-1661761077411-d50cba031848?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-      "id": "statistical-consulting",
-      "title": "Statistical Consulting",
-      "description": "Offer consulting for study design, data collection, statistical analysis, and interpretation of results.",
-      "image": "https://images.unsplash.com/photo-1746014601017-4e515ef51722?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-      "id": "academic-publishing",
-      "title": "Academic Publishing Advice",
-      "description": "Guidance on the academic publishing process, including journal selection, manuscript formatting, and responding to reviewer comments.",
+      "id": "honorary-doctorate",
+      "title": "Honorary Doctorate Facilitation",
+      "description": "We support individuals in being considered for an Honorary Doctorate, recognising meaningful contributions, generosity, and impactful work that has positively influenced communities and society at large.",
       "image": "https://images.unsplash.com/photo-1569682535081-3e826bee049b?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      "id": "workshops-webinars",
-      "title": "Workshops and Webinars",
-      "description": "Organize online courses on various aspects of research writing, methodology, data analysis, and academic publishing.",
-      "image": "https://images.unsplash.com/photo-1558008258-3256797b43f3?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-      "id": "topic-selection",
-      "title": "Topic Selection",
-      "description": "Helping researchers choose a relevant and impactful topic for their academic projects that aligns with their interests and field requirements.",
-      "image": "https://images.unsplash.com/photo-1731983568664-9c1d8a87e7a2?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
       "id": "dissertation-writing",
-      "title": "Dissertation Consultation",
-      "description": "Expert guidance through the complete dissertation process, from introduction and literature review to methodology, results, and conclusion.",
+      "title": "Dissertation Guidance & Editorial Support",
+      "description": "Our experienced professionals provide dedicated dissertation guidance and research-paper mentoring, from topic structuring to editorial support, helping candidates navigate every stage of the academic research journey.",
       "image": "https://plus.unsplash.com/premium_photo-1661542868188-12ea250ed513?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
+      "id": "law-admission",
+      "title": "Law Admission Support",
+      "description": "Law is a vast field of study, and Explore S Research Solutions experts guide you through complex admission procedures, offering dedicated support and ensuring every step is completed smoothly and efficiently.",
+      "image": "https://images.unsplash.com/photo-1589828994446-72390edc2143?q=80&w=1212&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "ug-pg-admission",
+      "title": "UG | PG Admission Assistance",
+      "description": "Explore S Research Solutions offers personalised support across Undergraduate (UG) and Postgraduate (PG) programmes, guiding you seamlessly from admission through successful course completion.",
+      "image": "https://images.unsplash.com/photo-1731983568664-9c1d8a87e7a2?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "management-courses",
+      "title": "Management Courses (MBA / DBA)",
+      "description": "Explore S Research Solutions is a one-stop destination for management degree programmes, offering DBA admissions along with MBA course guidance designed for aspiring management professionals.",
+      "image": "https://images.unsplash.com/photo-1558008258-3256797b43f3?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "biography-writing",
+      "title": "Biography Writing Support",
+      "description": "This service celebrates a person's legacy for a lifetime and beyond — sharing impactful life stories that inspire generations and continue to motivate others long after they are told.",
+      "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
       "id": "synopsis-proposal",
-      "title": "Synopsis / Research Proposal Guidance",
-      "description": "Crafting concise and compelling synopses or research proposals that outline the objectives, methodology, and significance of a research project.",
+      "title": "Synopsis & Research Proposal Writing",
+      "description": "We help scholars structure a clear, compelling synopsis and research proposal — ensuring the objectives, methodology, and scope of the study meet university and committee expectations from the first submission.",
       "image": "https://images.unsplash.com/photo-1637231366032-23b435d997c6?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      "id": "pg-report",
-      "title": "PG Report Guidance",
-      "description": "Expert guidance and support for postgraduate reports, ensuring clarity, coherence, and adherence to academic standards.",
+      "id": "documentation-support",
+      "title": "Documentation Support",
+      "description": "Explore S Research Solutions serves as your one-stop desk for all documentation requirements, providing comprehensive support services to ensure a smooth and hassle-free experience throughout your research journey.",
       "image": "https://plus.unsplash.com/premium_photo-1706544427215-4cbc984e3bb0?q=80&w=1187&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-      "id": "research-paper-ugc",
-      "title": "Research Paper Guidance (UGC/SCOPUS/SCI)",
-      "description": "Assisting in preparing research papers for publication in reputed journals indexed by UGC, SCOPUS, or SCI.",
-      "image": "https://images.unsplash.com/photo-1589828994446-72390edc2143?q=80&w=1212&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ]
 }

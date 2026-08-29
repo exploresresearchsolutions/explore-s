@@ -21,13 +21,13 @@ describe('ServicesMain', () => {
 
   test('renders all 3 main service titles', () => {
     renderPage();
-    expect(screen.getByText('Thesis Writing Assistance')).toBeInTheDocument();
-    expect(screen.getByText('Paper Writing Assistance')).toBeInTheDocument();
-    expect(screen.getByText('Paper Publication Assistance')).toBeInTheDocument();
+    expect(screen.getByText('Thesis Writing Support')).toBeInTheDocument();
+    expect(screen.getByText('Research Paper Writing & Publication Support')).toBeInTheDocument();
+    expect(screen.getByText('Journal Publication & Indexing Support')).toBeInTheDocument();
   });
 
   test('renders at least one detailed offering title', () => {
     renderPage();
-    expect(screen.getByText('Guides to Research Methodologies')).toBeInTheDocument();
+    expect(screen.getByText('PhD Admission & Guidance Support')).toBeInTheDocument();
   });
 });

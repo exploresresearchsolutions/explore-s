@@ -16,7 +16,7 @@ describe('ContactMain', () => {
     const container = renderPage();
     const h1s = container.querySelectorAll('h1');
     expect(h1s.length).toBe(1);
-    expect(h1s[0].textContent).toMatch(/Contact|Get in Touch|Touch/i);
+    expect(h1s[0].textContent).toMatch(/Contact|Get in Touch|Touch|Found Us/i);
   });
 
   test('renders form fields by name attribute', () => {
@@ -28,7 +28,7 @@ describe('ContactMain', () => {
 
   test('renders a submit button', () => {
     renderPage();
-    expect(screen.getByRole('button', { name: /send/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /send|callback|request/i })).toBeInTheDocument();
   });
 
   test('renders the contact email address', () => {

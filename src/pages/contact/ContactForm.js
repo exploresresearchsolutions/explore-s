@@ -1,6 +1,22 @@
 import React, { useState } from 'react';
 import { submitLead } from '../../utils/submitLead';
 
+const SERVICES = [
+  'PhD Admission & Guidance Support',
+  'Honorary Doctorate Facilitation',
+  'Thesis Writing Support',
+  'Dissertation Guidance & Editorial Support',
+  'Research Paper Writing & Publication Support',
+  'Journal Publication & Indexing Support',
+  'Law Admission Support',
+  'UG / PG Admission Assistance',
+  'Management Courses (MBA / DBA)',
+  'Biography Writing Support',
+  'Synopsis & Research Proposal Writing',
+  'Documentation Support',
+  'Other',
+];
+
 const ContactForm = () => {
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -10,13 +26,15 @@ const ContactForm = () => {
     if (submitting) return;
     setSubmitting(true);
     const fd = new FormData(e.target);
+    const country = fd.get('user_country') || '';
+    const message = fd.get('user_message') || '';
     try {
       await submitLead({
         name:    fd.get('user_name')    || '',
         phone:   fd.get('user_phone')   || '',
         email:   fd.get('user_email')   || '',
         service: fd.get('user_subject') || '',
-        message: fd.get('user_message') || '',
+        message: country ? `Country: ${country}\n${message}` : message,
       });
     } catch (err) {
       console.error('submitLead error:', err);
@@ -72,19 +90,7 @@ const ContactForm = () => {
 
         <div className="es-contact-form__row">
           <div className="es-contact-form__field">
-            <label htmlFor="cf-subject" className="es-contact-form__label">Subject</label>
-            <input
-              id="cf-subject"
-              type="text"
-              name="user_subject"
-              required
-              placeholder="How can we help?"
-              className="es-contact-form__input"
-            />
-          </div>
-
-          <div className="es-contact-form__field">
-            <label htmlFor="cf-phone" className="es-contact-form__label">Phone</label>
+            <label htmlFor="cf-phone" className="es-contact-form__label">Mobile Number</label>
             <input
               id="cf-phone"
               type="text"
@@ -94,10 +100,35 @@ const ContactForm = () => {
               className="es-contact-form__input"
             />
           </div>
+
+          <div className="es-contact-form__field">
+            <label htmlFor="cf-subject" className="es-contact-form__label">Select a Service</label>
+            <select
+              id="cf-subject"
+              name="user_subject"
+              required
+              className="es-contact-form__input"
+              defaultValue=""
+            >
+              <option value="" disabled>Choose a service</option>
+              {SERVICES.map((s) => <option key={s} value={s}>{s}</option>)}
+            </select>
+          </div>
         </div>
 
         <div className="es-contact-form__field es-contact-form__field--full">
-          <label htmlFor="cf-message" className="es-contact-form__label">Message</label>
+          <label htmlFor="cf-country" className="es-contact-form__label">Select Country</label>
+          <input
+            id="cf-country"
+            type="text"
+            name="user_country"
+            placeholder="Your country"
+            className="es-contact-form__input"
+          />
+        </div>
+
+        <div className="es-contact-form__field es-contact-form__field--full">
+          <label htmlFor="cf-message" className="es-contact-form__label">How Can We Help You?</label>
           <textarea
             id="cf-message"
             name="user_message"
@@ -108,9 +139,14 @@ const ContactForm = () => {
           />
         </div>
 
+        <label className="es-contact-form__consent" htmlFor="cf-consent">
+          <input id="cf-consent" type="checkbox" name="user_consent" required />
+          <span>I agree to receive updates and assistance from Explore S Research Solutions via Call, SMS, WhatsApp and Email.</span>
+        </label>
+
         <div className="es-contact-form__footer">
           <button type="submit" disabled={submitting} className="es-btn es-btn--primary es-contact-form__submit">
-            {submitting ? 'Sending\u2026' : 'Send Message'}
+            {submitting ? 'Sending\u2026' : 'Request a Callback'}
             {!submitting && (
               <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12" />
