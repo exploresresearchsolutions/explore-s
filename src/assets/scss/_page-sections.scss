@@ -1,0 +1,383 @@
+// _page-sections.scss — styles for PDF-driven content sections added to
+// About, Services, Become a Partner, Career, Contact and Blog pages.
+// Imported LAST in main.scss so these rules take precedence.
+// Uses brand tokens from _variables.scss (blue #0B3C91 / yellow #FDB714).
+
+// ── About: Core values ───────────────────────────────────────────────────────
+.es-values {
+  background: $whiteColor;
+
+  &__grid {
+    display: grid;
+    gap: 22px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    grid-template-columns: 1fr;
+    @media (min-width: 560px) { grid-template-columns: repeat(2, 1fr); }
+    @media (min-width: 992px) { grid-template-columns: repeat(5, 1fr); }
+  }
+
+  &__card {
+    background: $surfaceColor;
+    border: 1px solid $hairline;
+    border-radius: 16px;
+    padding: 26px 20px;
+    text-align: center;
+    transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(11, 60, 145, .12);
+      border-color: rgba($primaryColor, .3);
+    }
+  }
+
+  &__icon {
+    display: inline-grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 15px;
+    margin-bottom: 16px;
+    color: #fff;
+    background: linear-gradient(135deg, $primaryColor, $primaryDark);
+    box-shadow: 0 12px 22px -12px rgba($primaryColor, .6);
+    svg { width: 26px; height: 26px; }
+  }
+
+  &__title { font: 700 16px/1.3 $titlefont; color: $titleColor; margin: 0 0 8px; }
+  &__desc  { font: 400 13.5px/1.6 $bodyfont; color: $bodyColor; margin: 0; }
+}
+
+// ── About: Offices + CTA band ────────────────────────────────────────────────
+.es-offices {
+  margin-top: clamp(40px, 5vw, 60px);
+
+  &__heading { text-align: center; margin-bottom: 28px; }
+
+  &__grid {
+    display: grid;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    grid-template-columns: 1fr;
+    @media (min-width: 640px) { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: #fff;
+    border: 1px solid $hairline;
+    border-top: 3px solid $primaryColor;
+    border-radius: 14px;
+    padding: 24px 22px;
+    box-shadow: 0 4px 18px rgba(10, 37, 64, .05);
+  }
+
+  &__badge {
+    align-self: flex-start;
+    font: 800 10px/1 $bodyfont;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: $primaryColor;
+    background: $primarySoft;
+    padding: 6px 11px;
+    border-radius: 999px;
+    margin-bottom: 6px;
+  }
+
+  &__loc  { font: 700 16px/1.3 $titlefont; color: $titleColor; }
+  &__line { font: 400 13.5px/1.55 $bodyfont; color: $bodyColor; }
+}
+
+.es-cta-band {
+  margin-top: clamp(44px, 6vw, 72px);
+  border-radius: 22px;
+  overflow: hidden;
+  background: linear-gradient(135deg, $primaryColor 0%, $primaryDark 100%);
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 12% 20%, rgba($accentColor, .22), transparent 42%),
+      radial-gradient(circle at 88% 85%, rgba(255, 255, 255, .1), transparent 45%);
+    pointer-events: none;
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 22px;
+    padding: clamp(34px, 5vw, 56px) clamp(22px, 4vw, 48px);
+    @media (min-width: 860px) { flex-direction: row; justify-content: space-between; text-align: left; }
+  }
+
+  &__title {
+    font: 800 clamp(20px, 2.6vw, 30px)/1.25 $titlefont;
+    color: #fff;
+    margin: 0;
+    max-width: 40ch;
+  }
+}
+
+// ── Utility: tighter section (used when a band follows another section) ───────
+.es-section--tight {
+  padding-top: clamp(20px, 3vw, 40px);
+
+  .es-cta-band { margin-top: 0; }
+}
+
+// Hero CTA row (reused on Career hero)
+.es-svc-banner__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+}
+
+// ── Partner: stat grid (4-up) ────────────────────────────────────────────────
+.es-partner-stats__grid {
+  @media (min-width: 500px) { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 900px) { grid-template-columns: repeat(4, 1fr); }
+}
+.es-partner-stats { background: $whiteColor; }
+.es-partner-offers { background: $surfaceColor; }
+.es-partner-why { background: $whiteColor; }
+.es-partner-testi { background: $surfaceColor; }
+
+// ── Partner: program offers checklist ────────────────────────────────────────
+.es-checklist {
+  display: grid;
+  gap: 14px;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 720px;
+  grid-template-columns: 1fr;
+  @media (min-width: 640px) { grid-template-columns: 1fr 1fr; }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border: 1px solid $hairline;
+    border-radius: 12px;
+    padding: 16px 18px;
+    font: 600 15px/1.4 $bodyfont;
+    color: $titleColor;
+  }
+
+  &__tick {
+    flex: 0 0 auto;
+    display: inline-grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: $primarySoft;
+    color: $primaryColor;
+    svg { width: 16px; height: 16px; }
+  }
+}
+
+// ── Partner: why grid (3-up) ─────────────────────────────────────────────────
+.es-partner-why__grid {
+  @media (min-width: 560px) { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 992px) { grid-template-columns: repeat(3, 1fr); }
+
+  .es-values__card { text-align: left; }
+}
+
+// ── Partner: testimonial cards ───────────────────────────────────────────────
+.es-partner-testi__grid {
+  display: grid;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: 1fr;
+  @media (min-width: 700px) { grid-template-columns: repeat(3, 1fr); }
+}
+.es-partner-testi__card {
+  background: #fff;
+  border: 1px solid $hairline;
+  border-top: 3px solid $accentColor;
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: 0 4px 18px rgba(10, 37, 64, .05);
+}
+.es-partner-testi__stars { color: $accentColor; font-size: 16px; letter-spacing: 2px; }
+.es-partner-testi__quote { font: 400 14.5px/1.7 $bodyfont; color: $bodyColor; margin: 12px 0 20px; }
+.es-partner-testi__author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  strong { display: block; color: $titleColor; font: 700 14px/1.3 $titlefont; }
+}
+.es-partner-testi__avatar {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $primaryColor, $primaryDark);
+  color: #fff;
+  font: 800 16px/1 $titlefont;
+}
+.es-partner-testi__city { font: 500 12.5px/1 $bodyfont; color: $primaryColor; }
+.es-partner-reach { background: $surfaceColor; }
+
+// ── Career: culture grid ─────────────────────────────────────────────────────
+.es-career-culture { background: $whiteColor; }
+.es-career-culture__grid {
+  display: grid;
+  gap: 22px;
+  list-style: none;
+  margin: 0 0 clamp(32px, 4vw, 48px);
+  padding: 0;
+  grid-template-columns: 1fr;
+  @media (min-width: 700px) { grid-template-columns: repeat(3, 1fr); }
+  .es-values__card { text-align: left; }
+}
+.es-career-life {
+  background: $primarySoft;
+  border-radius: 18px;
+  padding: clamp(26px, 4vw, 40px);
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+// ── Career: openings ─────────────────────────────────────────────────────────
+.es-career-openings { background: $surfaceColor; }
+.es-career-openings__grid {
+  @media (min-width: 640px)  { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1024px) { grid-template-columns: repeat(3, 1fr); }
+}
+.es-career-openings .es-career-card__title { min-height: 2.6em; }
+
+// ── Career: apply form + queries ─────────────────────────────────────────────
+.es-career-apply { background: $whiteColor; }
+.es-career-apply__card {
+  max-width: 860px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid $hairline;
+  border-radius: 20px;
+  padding: clamp(24px, 4vw, 44px);
+  box-shadow: var(--es-shadow);
+}
+.es-career-queries__card {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+  background: $surfaceColor;
+  border: 1px solid $hairline;
+  border-radius: 18px;
+  padding: clamp(26px, 4vw, 40px);
+
+  .es-career-queries__line {
+    font: 500 15px/1.6 $bodyfont;
+    color: $bodyColor;
+    margin: 6px 0;
+    span { color: $titleColor; font-weight: 700; }
+    a { color: $primaryColor; }
+  }
+  .es-btn { margin-top: 16px; }
+}
+
+// ── Contact: consent + mission + quick links ─────────────────────────────────
+.es-contact-form__consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 4px 0 4px;
+  font: 400 12.5px/1.5 $bodyfont;
+  color: $bodyColor;
+  cursor: pointer;
+
+  input { margin-top: 2px; flex: 0 0 auto; accent-color: $primaryColor; }
+}
+
+.es-contact-more__mission {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto clamp(32px, 4vw, 48px);
+}
+.es-quicklinks {
+  display: grid;
+  gap: 12px;
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  grid-template-columns: 1fr;
+  @media (min-width: 560px) { grid-template-columns: 1fr 1fr; }
+  @media (min-width: 992px) { grid-template-columns: repeat(4, 1fr); }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    border: 1px solid $hairline;
+    border-radius: 12px;
+    padding: 14px 16px;
+    font: 600 13.5px/1.4 $bodyfont;
+    color: $titleColor;
+    text-decoration: none;
+    transition: $transition;
+
+    &:hover { border-color: rgba($primaryColor, .35); box-shadow: 0 8px 22px rgba(11, 60, 145, .1); color: $primaryColor; }
+  }
+  &__dot { width: 8px; height: 8px; border-radius: 50%; background: $accentColor; flex: 0 0 auto; }
+}
+.es-contact-more__links { text-align: center; }
+
+// ── Blog: layout with sidebar ────────────────────────────────────────────────
+.es-blog__layout {
+  display: grid;
+  gap: 32px;
+  @media (min-width: 992px) { grid-template-columns: 1fr 300px; align-items: start; }
+}
+.es-blog__sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  @media (min-width: 992px) { position: sticky; top: 100px; }
+}
+.es-blog__widget {
+  background: #fff;
+  border: 1px solid $hairline;
+  border-radius: 16px;
+  padding: 24px 22px;
+
+  &--cta {
+    background: linear-gradient(135deg, $primaryColor, $primaryDark);
+    border: none;
+    .es-blog__widget-title, .es-blog__widget-text { color: #fff; }
+    .es-blog__widget-text { opacity: .9; }
+  }
+}
+.es-blog__widget-title { font: 700 16px/1.3 $titlefont; color: $titleColor; margin: 0 0 14px; }
+.es-blog__widget-text { font: 400 14px/1.6 $bodyfont; color: $bodyColor; margin: 0 0 18px; }
+.es-blog__cats { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.es-blog__cat-item {
+  font: 600 13.5px/1.4 $bodyfont;
+  color: $primaryColor;
+  background: $primarySoft;
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+.es-blog__excerpt { font: 400 13.5px/1.6 $bodyfont; color: $bodyColor; margin: 0 0 16px; flex: 1; }
+

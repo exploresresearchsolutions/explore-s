@@ -1,0 +1,350 @@
+// _premium-polish.scss — visual/animation polish for the 6 updated pages.
+// Imported LAST in main.scss so these refinements take precedence.
+// Scope: About, Services, Become a Partner, Career, Contact, Blog.
+// No content/structure/logic changes — only gradients, depth, motion & responsive spacing.
+// Uses brand tokens from _variables.scss (blue #0B3C91 / navy #082C6B / red #E00112 / yellow #FDB714).
+
+$ease-premium: cubic-bezier(.22, .68, .28, 1);
+$shadow-sm: 0 2px 10px rgba(10, 37, 64, .05);
+$shadow-md: 0 12px 34px -14px rgba(10, 37, 64, .22);
+$shadow-lg: 0 26px 60px -24px rgba(11, 60, 145, .38);
+
+// ── Reusable gradient text (blue → red brand blend) ──────────────────────────
+%es-gradient-text {
+  background: linear-gradient(115deg, $primaryColor 0%, #1b4fb2 45%, $redColor 115%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+// ── Hero banners (Services / Partner / Career / Blog / Contact) ───────────────
+.es-svc-banner,
+.es-contact-hero {
+  background:
+    radial-gradient(1100px 420px at 50% -12%, rgba($primaryColor, .12), transparent 62%),
+    radial-gradient(680px 320px at 88% 8%, rgba($redColor, .05), transparent 60%),
+    linear-gradient(180deg, #ffffff 0%, $surfaceColor 100%);
+  border-bottom: 1px solid rgba($primaryColor, .07);
+  position: relative;
+  isolation: isolate;
+
+  // faint dotted texture for depth
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: radial-gradient(rgba($primaryColor, .06) 1px, transparent 1px);
+    background-size: 22px 22px;
+    -webkit-mask-image: radial-gradient(120% 80% at 50% 0%, #000 30%, transparent 75%);
+    mask-image: radial-gradient(120% 80% at 50% 0%, #000 30%, transparent 75%);
+    pointer-events: none;
+  }
+}
+
+// Premium gradient accent on hero headline words
+.es-svc-banner__accent,
+.es-contact-hero__accent {
+  @extend %es-gradient-text;
+}
+
+// About intro headline emphasis + video frame
+.es-about-intro__h1 em {
+  font-style: normal;
+  @extend %es-gradient-text;
+}
+.es-about__frame {
+  border-radius: 20px;
+  box-shadow: $shadow-lg;
+  border: 1px solid rgba($primaryColor, .1);
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 6px rgba(#fff, .55);
+    pointer-events: none;
+  }
+}
+.es-about__img { transition: transform .8s $ease-premium; }
+.es-about__frame:hover .es-about__img { transform: scale(1.04); }
+
+// ── Chips (about / services / contact heroes) ────────────────────────────────
+.es-about-intro__chip,
+.es-svc-banner__chip,
+.es-contact-hero__chip {
+  background: rgba(#fff, .8);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba($primaryColor, .14);
+  box-shadow: 0 4px 14px rgba($primaryColor, .08);
+  transition: transform .3s $ease-premium, box-shadow .3s $ease-premium;
+
+  &:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba($primaryColor, .14); }
+}
+
+// ── Buttons — micro-interactions ─────────────────────────────────────────────
+.es-btn {
+  transition: transform .28s $ease-premium, box-shadow .28s $ease-premium, background-color .28s ease, color .28s ease;
+  will-change: transform;
+
+  &--primary {
+    background: linear-gradient(135deg, $primaryColor 0%, $primaryDark 100%);
+    box-shadow: 0 8px 20px -8px rgba($primaryColor, .55);
+    &:hover { transform: translateY(-2px); box-shadow: 0 16px 30px -10px rgba($primaryColor, .6); }
+    &:active { transform: translateY(0) scale(.98); }
+  }
+
+  &--accent {
+    background: linear-gradient(135deg, $accentColor 0%, $accentDark 100%);
+    box-shadow: 0 8px 20px -8px rgba($accentColor, .6);
+    &:hover { transform: translateY(-2px); box-shadow: 0 16px 30px -10px rgba($accentColor, .65); }
+    &:active { transform: translateY(0) scale(.98); }
+  }
+
+  &--outline,
+  &--ghost {
+    &:hover { transform: translateY(-2px); box-shadow: 0 12px 26px -12px rgba($primaryColor, .4); }
+    &:active { transform: translateY(0) scale(.98); }
+  }
+}
+
+// ── Eyebrow — refined accent ─────────────────────────────────────────────────
+.es-values .es-eyebrow,
+.es-mv .es-eyebrow,
+.es-global .es-eyebrow,
+.es-partner-stats .es-eyebrow,
+.es-partner-offers .es-eyebrow,
+.es-partner-why .es-eyebrow,
+.es-partner-testi .es-eyebrow,
+.es-partner-reach .es-eyebrow,
+.es-career-culture .es-eyebrow,
+.es-career-openings .es-eyebrow,
+.es-career-apply .es-eyebrow,
+.es-contact-more .es-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  &::before {
+    content: '';
+    width: 22px;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, $accentColor, $redColor);
+  }
+}
+
+// ── Card family — unified premium depth + motion ─────────────────────────────
+.es-values__card,
+.es-offices__card,
+.es-partner-testi__card,
+.es-global__stat,
+.es-checklist__item,
+.es-quicklinks__item {
+  box-shadow: $shadow-sm;
+  transition: transform .38s $ease-premium, box-shadow .38s $ease-premium, border-color .38s ease;
+  will-change: transform;
+}
+
+.es-values__card,
+.es-offices__card,
+.es-partner-testi__card {
+  position: relative;
+  overflow: hidden;
+
+  // top gradient sheen line that widens on hover
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 34%;
+    background: linear-gradient(90deg, $primaryColor, $accentColor);
+    border-radius: 0 6px 6px 0;
+    transition: width .45s $ease-premium;
+  }
+  &:hover::before { width: 100%; }
+  &:hover { box-shadow: $shadow-md; }
+}
+
+// Icon chips → gradient depth
+.es-card__icon,
+.es-values__icon {
+  background: linear-gradient(135deg, rgba($primaryColor, .12), rgba($primaryColor, .04));
+  box-shadow: inset 0 1px 0 rgba(#fff, .6);
+}
+.es-values__icon {
+  background: linear-gradient(135deg, $primaryColor, $primaryDark);
+  box-shadow: 0 14px 24px -12px rgba($primaryColor, .6), inset 0 1px 0 rgba(#fff, .35);
+  transition: transform .4s $ease-premium;
+}
+.es-values__card:hover .es-values__icon { transform: translateY(-3px) scale(1.06); }
+
+// ── About: Mission / Vision cards ────────────────────────────────────────────
+.es-mv__card {
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+  box-shadow: $shadow-sm;
+  transition: transform .4s $ease-premium, box-shadow .4s $ease-premium;
+  &:hover { transform: translateY(-6px); box-shadow: $shadow-md; }
+}
+
+// ── Stats — gradient numerals ────────────────────────────────────────────────
+.es-global__value {
+  @extend %es-gradient-text;
+  letter-spacing: -.01em;
+}
+.es-global__stat {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  &:hover { transform: translateY(-5px); box-shadow: $shadow-md; border-color: rgba($primaryColor, .22); }
+}
+
+// ── Soft tinted section backgrounds ──────────────────────────────────────────
+.es-global,
+.es-partner-reach {
+  background:
+    radial-gradient(900px 380px at 50% 0%, rgba($primaryColor, .06), transparent 60%),
+    linear-gradient(180deg, $surfaceColor 0%, #ffffff 100%);
+}
+.es-career-life {
+  background:
+    radial-gradient(700px 300px at 20% 0%, rgba($primaryColor, .1), transparent 60%),
+    linear-gradient(135deg, $primarySoft 0%, #ffffff 100%);
+  border: 1px solid rgba($primaryColor, .1);
+  box-shadow: $shadow-sm;
+}
+
+// ── CTA band — added depth + sheen ───────────────────────────────────────────
+.es-cta-band {
+  box-shadow: 0 30px 60px -28px rgba($primaryColor, .6);
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg, transparent 30%, rgba(#fff, .08) 50%, transparent 70%);
+    pointer-events: none;
+  }
+}
+
+// ── Checklist + quick links hover polish ─────────────────────────────────────
+.es-checklist__item:hover,
+.es-quicklinks__item:hover {
+  transform: translateY(-3px);
+  box-shadow: $shadow-md;
+  border-color: rgba($primaryColor, .28);
+}
+.es-checklist__item { transition: transform .32s $ease-premium, box-shadow .32s $ease-premium, border-color .32s ease; }
+
+// ── Services & Blog image hover scale ────────────────────────────────────────
+.es-svc-card__img,
+.es-svc-offering__img,
+.es-blog__media-img {
+  transition: transform .7s $ease-premium;
+}
+.es-svc-card:hover .es-svc-card__img,
+.es-svc-offering:hover .es-svc-offering__img,
+.es-blog__card:hover .es-blog__media-img {
+  transform: scale(1.07);
+}
+.es-blog__card {
+  box-shadow: $shadow-sm;
+  transition: transform .4s $ease-premium, box-shadow .4s $ease-premium, border-color .4s ease;
+  &:hover { transform: translateY(-6px); box-shadow: $shadow-md; border-color: rgba($primaryColor, .2); }
+}
+.es-blog__link,
+.es-career-card__cta {
+  transition: gap .3s $ease-premium, color .3s ease, background-color .3s ease, transform .3s $ease-premium;
+}
+
+// ── Blog sidebar CTA widget — richer gradient ────────────────────────────────
+.es-blog__widget--cta {
+  background:
+    radial-gradient(400px 200px at 100% 0%, rgba($redColor, .22), transparent 60%),
+    linear-gradient(140deg, $primaryColor 0%, $primaryDark 100%);
+  box-shadow: $shadow-md;
+}
+
+// ── Contact card + form polish ───────────────────────────────────────────────
+.es-contact__card {
+  box-shadow: 0 30px 70px -34px rgba(10, 37, 64, .35);
+  border-radius: 22px;
+  overflow: hidden;
+}
+.es-contact__map {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: $shadow-md;
+}
+.es-contact-form__input,
+.es-contact-form__textarea {
+  transition: border-color .28s ease, box-shadow .28s ease, background-color .28s ease;
+  &:focus {
+    border-color: $primaryColor;
+    box-shadow: 0 0 0 4px rgba($primaryColor, .12);
+    outline: none;
+  }
+}
+.es-career-apply__card,
+.es-career-queries__card {
+  box-shadow: $shadow-md;
+}
+
+// ── Testimonials (About) quote cards ─────────────────────────────────────────
+.es-testi__card,
+.es-testimonials__card {
+  transition: transform .4s $ease-premium, box-shadow .4s $ease-premium;
+  &:hover { transform: translateY(-4px); box-shadow: $shadow-md; }
+}
+
+// ── Respect reduced motion ───────────────────────────────────────────────────
+@media (prefers-reduced-motion: reduce) {
+  .es-btn,
+  .es-values__card,
+  .es-offices__card,
+  .es-partner-testi__card,
+  .es-global__stat,
+  .es-blog__card,
+  .es-checklist__item,
+  .es-quicklinks__item,
+  .es-mv__card,
+  .es-about__img,
+  .es-svc-card__img,
+  .es-svc-offering__img,
+  .es-blog__media-img {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+// ── Responsive polish ────────────────────────────────────────────────────────
+@media (max-width: 575px) {
+  // Tighter hero spacing & readable headline scaling on small phones
+  .es-svc-banner__h1,
+  .es-contact-hero__h1,
+  .es-about-intro__h1 { line-height: 1.15; }
+
+  .es-svc-banner__ctas { width: 100%; }
+  .es-svc-banner__ctas .es-btn,
+  .es-about-intro__ctas .es-btn { flex: 1 1 auto; justify-content: center; }
+
+  .es-cta-band__inner { text-align: center; }
+  .es-cta-band .es-btn { width: 100%; justify-content: center; }
+
+  // Prevent any horizontal overflow from decorative blobs
+  .es-svc-banner,
+  .es-contact-hero,
+  .react-wrapper-inner { overflow-x: clip; }
+
+  .es-checklist,
+  .es-quicklinks { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+  // Balanced 2-up value/why grids on tablet
+  .es-values__grid { grid-template-columns: repeat(2, 1fr); }
+}

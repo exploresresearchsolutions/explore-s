@@ -36,10 +36,10 @@ const DetailedOfferingsSection = () => {
     >
       <div className="container">
         <div className="es-svc-intro">
-          <span className="es-eyebrow">Go deeper</span>
-          <h2 className="es-h2">Detailed Offerings</h2>
+          <span className="es-eyebrow">All services</span>
+          <h2 className="es-h2">Comprehensive Research &amp; Academic Support Services</h2>
           <p className="es-svc-intro__lead">
-            Comprehensive support for all your academic research needs.
+            From admissions to publication — dedicated support for every academic and research milestone.
           </p>
         </div>
 

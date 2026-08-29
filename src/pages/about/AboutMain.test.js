@@ -18,7 +18,7 @@ test('renders exactly one h1 — the About page banner title', () => {
   );
   const h1s = container.querySelectorAll('h1');
   expect(h1s.length).toBe(1);
-  expect(h1s[0].textContent).toMatch(/Explore S Research Solutions/i);
+  expect(h1s[0].textContent).toMatch(/Research Excellence|Global Vision/i);
 });
 
 test('renders mission and vision section content', () => {

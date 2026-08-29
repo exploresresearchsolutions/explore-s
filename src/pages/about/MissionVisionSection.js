@@ -101,7 +101,7 @@ const MissionVisionSection = () => {
             </div>
             <h3 className="es-card__title">Our Mission</h3>
             <p className="es-card__desc">
-              At Explore S Research Solutions, our mission is to empower students, researchers, and professionals by delivering exceptional research assistance that drives academic success. We understand the challenges that come with academic pursuits, and we are here to alleviate those pressures by providing reliable, expert support.
+              To empower researchers and scholars by combining academic rigour with practical, personalised guidance — offering seamless support from proposal writing through to doctoral completion. We are committed to promoting inclusive and equitable access to quality research education, in line with the global goal of accessible, lifelong learning.
             </p>
             <ul className="es-about__points es-mv__features">
               {MISSION_FEATURES.map(({ title, desc, icon }) => (
@@ -126,7 +126,7 @@ const MissionVisionSection = () => {
             </div>
             <h3 className="es-card__title">Our Vision</h3>
             <p className="es-card__desc">
-              Our team is comprised of highly qualified professionals with advanced degrees and extensive experience in research and academic writing. Each member of our team is dedicated to delivering meticulous, well-researched, and original content. We pride ourselves on our ability to understand the specific requirements of each client and provide customized solutions that meet the highest standards of academic integrity.
+              To build a global community of researchers, doctoral candidates, and published scholars where academic achievement and research integrity are equally valued. We envision a world where quality research guidance is accessible to all, irrespective of background, and where continuous learning drives innovation, personal growth, and lasting societal impact.
             </p>
             <ul className="es-about__points es-mv__features">
               {VISION_FEATURES.map(({ title, desc, icon }) => (

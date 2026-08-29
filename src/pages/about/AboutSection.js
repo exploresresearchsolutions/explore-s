@@ -33,15 +33,18 @@ const AboutPart = () => {
 
           {/* ── Copy column ── */}
           <div className="es-about-intro__copy">
-            <span className="es-eyebrow" data-about-rise>About us</span>
+            <span className="es-eyebrow" data-about-rise>We Explore. You Excel.</span>
             <h1 className="es-about-intro__h1" data-about-rise>
-              Welcome to <em>Explore S Research Solutions</em>
+              A Global Vision Rooted in <em>Research Excellence</em>
             </h1>
             <p className="es-about__body" data-about-rise>
-              Discover the difference with personalized, expert research assistance at Explore S Research Solutions.
+              Founded in [Year] by [Founder Name], Explore S Research Solutions began with a simple but powerful vision: to make quality doctoral and academic research support accessible to every serious researcher, professional, and lifelong learner. What started as a focused research-assistance practice has grown into a trusted, professionally structured research solutions platform, built to close the gap between academic ambition and academic achievement.
             </p>
             <p className="es-about__body" data-about-rise>
-              Welcome to Explore S Research Solutions, your trusted partner in academic excellence. We are dedicated to providing top-tier research writing assistance to help you achieve your academic goals. Our team of seasoned experts brings years of experience across a broad spectrum of disciplines, ensuring that you receive personalized, high-quality support tailored to your unique needs.
+              Explore S Research Solutions today spans multiple service verticals — PhD and Doctoral Guidance, Research Paper and Journal Publication Support, Academic and Dissertation Writing Services, and Professional Certification Assistance — each built around one shared goal: helping researchers turn ideas into recognised, published work.
+            </p>
+            <p className="es-about__body" data-about-rise>
+              At the heart of the organisation is [Founder/Chairman Name], whose commitment to accessible, ethical, and quality-driven research support continues to guide the company's mission. Supporting this vision is [CEO/Director Name], whose technology-first approach helps researchers reach their academic goals through structured, transparent, and outcome-focused guidance.
             </p>
             <div className="es-about-intro__ctas" data-about-rise>
               <Link to="/contact" className="es-btn es-btn--primary">
