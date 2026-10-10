@@ -71,5 +71,12 @@
       "source": "/(.*)",
       "destination": "/index.html"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/((?!blank\\.html$).*)",
+      "destination": "/blank.html",
+      "permanent": false
+    }
   ]
 }
